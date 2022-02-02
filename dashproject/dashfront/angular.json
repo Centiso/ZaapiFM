@@ -32,7 +32,8 @@
             ],
             "scripts": [
               "node_modules/jquery/bootstrap/dist/js/bootstrap.min.css",
-              "node_modules/bootstrap/dist/js/bootstrap.min.css"
+              "node_modules/bootstrap/dist/js/bootstrap.min.css",
+              "node_modules/spotify−web−api−node/src/spotify−web−api . js "
             ]
           },
           "configurations": {
