@@ -1,0 +1,25 @@
+<h1>Dofapi test :</h1>
+<div>
+    <div>
+        <h2> Les stats de la Dofusteuse</h2>
+    </div>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th> Name</th>
+                    <th> ID</th>
+                    <th> Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dofusteuse of Dofusteuse; let i = index">
+                    <td> {{dofusteuse.name}}</td>
+                    <td> {{dofusteuse.ankamaId}}</td>
+                    <td> {{dofusteuse.type}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
