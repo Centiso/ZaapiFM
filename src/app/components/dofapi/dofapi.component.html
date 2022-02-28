@@ -1,23 +1,29 @@
 <h1>Dofapi test :</h1>
 <div>
     <div>
-        <h2> Les stats de la Dofusteuse</h2>
-    </div>
-
-    <div>
-        <table>
+        <table class="table table-light table-hover">
             <thead>
                 <tr>
                     <th> Name</th>
                     <th> ID</th>
                     <th> Type</th>
+                    <th> Item</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let dofusteuse of Dofusteuse; let i = index">
-                    <td> {{dofusteuse.name}}</td>
-                    <td> {{dofusteuse.ankamaId}}</td>
-                    <td> {{dofusteuse.type}}</td>
+                <tr *ngFor="let d of Dofusteuse">
+                    <td> {{d.name}}</td>
+                    <td> {{d.ankamaId}}</td>
+                    <td> {{d.type}}</td>
+                    <td> 
+                        <a href="{{d.url}}" target="_blank">
+                            <img 
+                            [src]="d.imgUrl" 
+                            height="64" 
+                            alt="Image de {{d.name}} venant de Dofus"
+                            title="{{d.name}}">
+                        </a>    
+                    </td>
                 </tr>
             </tbody>
         </table>

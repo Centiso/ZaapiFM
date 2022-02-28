@@ -10,11 +10,11 @@ export class DofapiComponent implements OnInit {
 
   Dofusteuse:any = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor( private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.apiService.GetDofusteuse().subscribe(res => {
-      console.log(res)
+      //console.log(res)
       this.Dofusteuse = res;
     });
   }

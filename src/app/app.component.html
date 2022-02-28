@@ -1,13 +1,34 @@
-<div class="card-container">
-  <app-dofapi></app-dofapi>
+<header class="p-3 bg-light">
+  <h1>ZaapiFM</h1>
+</header>
+
+<div class="container">
+  <div class="col">
+    <div class="row">
+
+      <div class="col-lg-7">
+        <app-dofapi></app-dofapi>
+      </div>
+
+      <div class="col-lg-4">
+        <app-pixabay></app-pixabay>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <app-twitch></app-twitch>
+      </div>
+    </div>
+
+  </div>
 </div>
-<br/><br/>
-<div class="col-lg-4">
-  <app-pixabay></app-pixabay>
-</div>
-<div class="col-lg-4">
-  <app-twitch></app-twitch>
-</div>
-<div class="col-lg-4">
-  <app-spotify></app-spotify>
+
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-muted">© 2022 ZaapiFM, All rights reserved.</p>
+
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+    </a>
+  </footer>
 </div>

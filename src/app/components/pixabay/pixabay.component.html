@@ -1,5 +1,32 @@
 <h1> Pixabay test : </h1>
 <br/>
+<div>
+  <div>
+      <table class="table table-light table-hover">
+          <thead>
+              <tr>
+                  <th> ID</th>
+                  <th> Views</th>
+                  <th> Likes</th>
+                  <th> Tags</th>
+                  <th> Preview</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let p of Pixabay.hits">
+                  <td> {{p.id}}</td>
+                  <td> {{p.views}}</td>
+                  <td> {{p.likes}}</td>
+                  <td> {{p.tags}}</td>
+                  <td> 
+                    <img [src]="p.previewURL" height="144"> <br/>
+                  </td>
+                </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+<!--
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -26,3 +53,4 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+-->

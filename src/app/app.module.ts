@@ -10,6 +10,9 @@ import { PixabayComponent } from './components/pixabay/pixabay.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { ApiService } from './services/api.service';
+import { TwitchApiService } from './services/twitch.api.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    TwitchApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
