@@ -1,1 +1,15 @@
 <h2>Test API Twitch</h2>
+<div class="row">
+    <table>
+        <thead>
+            <tr>
+                <th>Nom Streamer</th>
+                <th>Jeu</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of StreamerList; let j = index">
+                <td> {{i.display_name}}</td>
+                <td> {{i.game_name}}</td>
+        </tbody>
+    </table>
+</div>
