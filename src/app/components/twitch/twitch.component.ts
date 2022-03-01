@@ -9,6 +9,8 @@ import { interval } from 'rxjs';
   styleUrls: ['./twitch.component.css']
 })
 
+
+
 export class TwitchComponent implements OnInit {
 
 
@@ -25,6 +27,18 @@ export class TwitchComponent implements OnInit {
     if(!this.twitchApiService.twitchIsAuthenticated()) {
       this.twitchApiService.twitchAuth();
     }
+
+    const params = this.twitchApiService.getUrlQueryStringParams();
+
+    this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/search/channels", {
+      "query": 'a_seagull',
+      "live_only": true
+    }, {
+      "client_id": this.twitchApiService.CLIENT_ID_APP,
+      "Authorization": `Bearer ${params.access_token}`
+    })
+    .then(result => console.log(result))
+    .catch(error => console.error(error));
   }
 
 }

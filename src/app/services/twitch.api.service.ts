@@ -2,18 +2,21 @@ import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
+// import { encode } from 'querystring';
 
-const REST_API = '';
-const CLIENT_ID_APP = 'qp871hruk96hd4h5mh8yaeo5n96wby';
-const CLIENT_ID_EXTENSION = '3zkcgkfkap9z6kvwtd0y3gydf1fycc';
-const REDIRECT_URI = 'http://localhost:4200/';
-const RESPONSE_TYPE = 'token';
-const SCOPES = 'channel:read:subscriptions'
-const ACCESS_TOKEN = '258t44bpotidpy28d5vtsvkm23qky0';
-const TWITCH_OAUTH_URL = 'https://id.twitch.tv/oauth2/authorize?';
+
 
 export class TwitchApiService {
     
+    REST_API = '';
+    CLIENT_ID_APP = 'qp871hruk96hd4h5mh8yaeo5n96wby';
+    CLIENT_ID_EXTENSION = '3zkcgkfkap9z6kvwtd0y3gydf1fycc';
+    REDIRECT_URI = 'http://localhost:4200/';
+    RESPONSE_TYPE = 'token';
+    SCOPES = 'channel:read:subscriptions'
+    ACCESS_TOKEN = '258t44bpotidpy28d5vtsvkm23qky0';
+    TWITCH_OAUTH_URL = 'https://id.twitch.tv/oauth2/authorize?';
 
     constructor() { }
 
@@ -75,12 +78,12 @@ export class TwitchApiService {
      */
     twitchAuth(): void {
         const params = {
-            client_id: CLIENT_ID_APP,
-            redirect_uri: REDIRECT_URI,
-            response_type: RESPONSE_TYPE,
-            scopes: SCOPES
+            client_id: this.CLIENT_ID_APP,
+            redirect_uri: this.REDIRECT_URI,
+            response_type: this.RESPONSE_TYPE,
+            scopes: this.SCOPES
         };
-        location.href = `${TWITCH_OAUTH_URL}${this.encodeQueryString(params)}`; 
+        location.href = `${this.TWITCH_OAUTH_URL}${this.encodeQueryString(params)}`; 
     }
 
     /**
@@ -94,5 +97,42 @@ export class TwitchApiService {
         } else {
             return false; 
         }
+    }
+
+    /**
+     * Méthode effectuant une requête GET à l'API Twitch
+     * @param url 
+     * @param params 
+     * @param headers 
+     * @returns 
+     */
+    makeGetJsonRequest(url: string, params = null, headers: any) {
+        if (params) {
+            url = `${url}?${this.encodeQueryString(params)}`;
+        }
+
+        return new Promise((resolve, reject) => {
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        const responseJson = JSON.parse(xhr.responseText);
+                        resolve(responseJson);
+                    } catch(error) {
+                        reject(error);
+                    }
+                }
+            };
+            xhr.onerror = reject;
+            xhr.open("GET", url, true);
+
+            if(headers) {
+                for(let header in headers) {
+                    xhr.setRequestHeader(header, headers[header]);
+                }
+            }
+            xhr.send();
+        });
     }
 }
