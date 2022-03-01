@@ -10,7 +10,7 @@ const REDIRECT_URI = 'http://localhost:4200/';
 const RESPONSE_TYPE = 'token';
 const SCOPES = 'channel:read:subscriptions'
 const ACCESS_TOKEN = '258t44bpotidpy28d5vtsvkm23qky0';
-const TWITCH_0AUTH_URL = 'https://id.twitch.tv/oauth2/authorize?';
+const TWITCH_OAUTH_URL = 'https://id.twitch.tv/oauth2/authorize?';
 
 export class TwitchApiService {
     
@@ -80,7 +80,7 @@ export class TwitchApiService {
             response_type: RESPONSE_TYPE,
             scopes: SCOPES
         };
-        location.href = `${TWITCH_0AUTH_URL}${this.encodeQueryString(params)}`; 
+        location.href = `${TWITCH_OAUTH_URL}${this.encodeQueryString(params)}`; 
     }
 
     /**
