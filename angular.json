@@ -34,7 +34,6 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/spotify-web-api-node/src/spotify-web-api.js"
-
             ]
           },
           "configurations": {

@@ -31,7 +31,7 @@ export class TwitchComponent implements OnInit {
     const params = this.twitchApiService.getUrlQueryStringParams();
 
     this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/search/channels", {
-      "query": 'a_seagull',
+      "query": 'dofus',
       "live_only": true
     }, {
       "client_id": this.twitchApiService.CLIENT_ID_APP,

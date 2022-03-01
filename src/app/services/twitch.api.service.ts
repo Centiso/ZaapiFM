@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
-// import { encode } from 'querystring';
 
 
 
@@ -106,7 +105,7 @@ export class TwitchApiService {
      * @param headers 
      * @returns 
      */
-    makeGetJsonRequest(url: string, params = null, headers: any) {
+    makeGetJsonRequest(url: string, params: any, headers: any) {
         if (params) {
             url = `${url}?${this.encodeQueryString(params)}`;
         }
