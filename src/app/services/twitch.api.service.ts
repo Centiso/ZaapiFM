@@ -14,7 +14,7 @@ export class TwitchApiService {
     REDIRECT_URI = 'http://localhost:4200/';
     RESPONSE_TYPE = 'token';
     SCOPES = 'channel:read:subscriptions'
-    ACCESS_TOKEN = '258t44bpotidpy28d5vtsvkm23qky0';
+    ACCESS_TOKEN = '1nuug7ydl7iuge0ce6yqt9l7yr1595';
     TWITCH_OAUTH_URL = 'https://id.twitch.tv/oauth2/authorize?';
 
     constructor() { }
@@ -107,7 +107,7 @@ export class TwitchApiService {
      */
     makeGetJsonRequest(url: string, params: any, headers: any) {
         if (params) {
-            url = `${url}?${this.encodeQueryString(params)}`;
+            url = `${url}${this.encodeQueryString(params)}`;
         }
 
         return new Promise((resolve, reject) => {

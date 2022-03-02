@@ -30,15 +30,12 @@ export class TwitchComponent implements OnInit {
 
     const params = this.twitchApiService.getUrlQueryStringParams();
 
-    this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/search/channels", {
-      "query": 'dofus',
-      "live_only": true
-    }, {
-      "client_id": this.twitchApiService.CLIENT_ID_APP,
+    this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/streams", {}, {
+      "Client_id": this.twitchApiService.CLIENT_ID_APP,
       "Authorization": `Bearer ${params.access_token}`
     })
-    .then(result => console.log(result))
-    .catch(error => console.error(error));
+    .then(result => console.log("coucou"))
+    .catch(error => console.error(error));  
   }
 
 }
