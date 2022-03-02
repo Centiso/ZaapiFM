@@ -20,23 +20,46 @@ export class TwitchComponent implements OnInit {
 
   
   ngOnInit(): void {
-    // this.twitchApiService.getStreamerOnline().subscribe(res => {
-    //   console.log(res);
-    //   this.StreamerList = res;
-    // });
+    const params = this.twitchApiService.getUrlQueryStringParams();
+
     if(!this.twitchApiService.twitchIsAuthenticated()) {
       this.twitchApiService.twitchAuth();
     }
 
-    const params = this.twitchApiService.getUrlQueryStringParams();
-
-    this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/streams", {}, {
-      "Client_id": this.twitchApiService.CLIENT_ID_APP,
+    this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/search/channels", {
+      "query": "dofus",
+      "live_only": true,
+      "first": 50
+    }, {
+      "client-id": this.twitchApiService.CLIENT_ID_APP,
       "Authorization": `Bearer ${params.access_token}`
     })
-    .then(result => console.log("coucou"))
-    .catch(error => console.error(error));  
+    .then(result => { 
+      console.log(result);
+      this.StreamerList = result;
+      console.log("Liste des streamers : " + this.StreamerList)
+    });
   }
 
-}
+    // this.apiService.GetDofusteuse().subscribe(res => {
+    //   //console.log(res)
+    //   this.Dofusteuse = res;
+    // });
 
+    
+
+    
+
+    // this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/search/channels", {
+    //   "query": "dofus",
+    //   "live_only": true,
+    //   "first": 50
+    // }, {
+    //   "client-id": this.twitchApiService.CLIENT_ID_APP,
+    //   "Authorization": `Bearer ${params.access_token}`
+    // })
+    // .then(result => console.log(result))
+    // .catch(error => console.error(error)); 
+    //)}
+
+}

@@ -3,6 +3,7 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
+import { XhrFactory } from '@angular/common';
 
 
 
@@ -18,36 +19,13 @@ export class TwitchApiService {
     TWITCH_OAUTH_URL = 'https://id.twitch.tv/oauth2/authorize?';
 
     constructor() { }
-
-
-    /*
-            ---- PROCEDURE POUR OBTENIR LA LISTE DES STREAMERS EN DIRECT ---- 
-
-
-            - Obtenir un jeton utilisateur OAuth
-
-            - Patron :
-                GET https://id.twitch.tv/oauth2/authorize?
-                client_id=qp871hruk96hd4h5mh8yaeo5n96wby&
-                redirect_uri=http://localhost:4200/&
-                response_type=token&scope=user:read:email
-
-            - Exemple de demandes
-                curl -X GET 'https://api.twitch.tv/helix/search/channels?query=a_seagull' \
-                -H 'Authorization: Bearer 2gbdx6oar67tqtcmt49t3wpcgycthx' \
-                -H 'Client-Id: wbmytr93xzw8zbg0p1izqyzzc5mbiz'
-        
-            - URL
-                GET helix/search/channels
-    */
-
     /**
      * Méthode qui va encoder les éléments de la table de hachage
      * passés en argument
      * @param params  
      * @returns l'url encodé
      */
-    encodeQueryString(params: any) {
+    encodeQueryString(params: any): string {
         let items = [];
         for(let key in params) {
             let value = encodeURIComponent(params[key]);
@@ -107,8 +85,13 @@ export class TwitchApiService {
      */
     makeGetJsonRequest(url: string, params: any, headers: any) {
         if (params) {
-            url = `${url}${this.encodeQueryString(params)}`;
+            url = `${url}?${this.encodeQueryString(params)}`;
         }
+
+        // headers = new HttpHeaders()
+        // .set('Access-Control-Allow-Origin', 'http://localhost:4200')
+        // .set("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
+        // .set("Access-Control-Allow-Headers", "client_id, Content-Type, Authorization, X-Requested-With")
 
         return new Promise((resolve, reject) => {
             var xhr = new XMLHttpRequest();
