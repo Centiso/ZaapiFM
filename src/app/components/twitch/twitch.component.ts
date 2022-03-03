@@ -37,19 +37,10 @@ export class TwitchComponent implements OnInit {
     .then(result => { 
       console.log(result);
       this.StreamerList = result;
-      console.log("Liste des streamers : " + this.StreamerList)
     });
   }
 
-    // this.apiService.GetDofusteuse().subscribe(res => {
-    //   //console.log(res)
-    //   this.Dofusteuse = res;
-    // });
-
     
-
-    
-
     // this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/search/channels", {
     //   "query": "dofus",
     //   "live_only": true,

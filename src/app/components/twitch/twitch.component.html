@@ -1,15 +1,24 @@
-<h2>Test API Twitch</h2>
-<div class="row">
-    <table class="table table-light table-hover">
-        <thead>
-            <tr>
-                <th>Nom Streamer</th>
-                <th>Jeu</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let i of StreamerList">
-                <td> {{i.display_name}}</td>
-                <td>{{ i.game_name }}</td>
-        </tbody>
-    </table>
+<h2>📺 Pour voir du contenu en direct...</h2>
+<div style="position: relative; width: 100%;">
+    <div style="height:350px; overflow: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th style="position: sticky; top: 0; width:20%; background-color:blueviolet; color:white; text-align: center;"> Streamer</th>
+                    <th style="position: sticky; top: 0; width:20%; background-color:blueviolet; color:white; text-align: center;">Jeu</th>
+                    <th style="position: sticky; top: 0; width:60%; background-color:blueviolet; color:white; text-align: center;">Titre</th>
+            </thead>
+            <tbody style="text-align:center;">
+                <tr *ngFor="let i of StreamerList.data">
+                    <td style="background-color:rgb(230, 177, 255); border-bottom: 1px solid rgb(117, 112, 112);">
+                        <a href="https://www.twitch.tv/{{i.display_name}}" target="_blank" style="color: black;">
+                            {{i.display_name}}
+                        </a>
+                    </td>
+                    <td style="background-color: rgb(168, 117, 216); border-bottom: 1px solid rgb(117, 112, 112);;">{{ i.game_name }}</td>
+                    <td style="background-color:rgb(230, 177, 255); border-bottom: 1px solid rgb(117, 112, 112);">{{ i.title }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
