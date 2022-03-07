@@ -9,9 +9,7 @@ import { XhrFactory } from '@angular/common';
 
 export class TwitchApiService {
     
-    REST_API = '';
     CLIENT_ID_APP = 'qp871hruk96hd4h5mh8yaeo5n96wby';
-    CLIENT_ID_EXTENSION = '3zkcgkfkap9z6kvwtd0y3gydf1fycc';
     REDIRECT_URI = 'http://localhost:4200/';
     RESPONSE_TYPE = 'token';
     SCOPES = 'channel:read:subscriptions'
@@ -19,6 +17,7 @@ export class TwitchApiService {
     TWITCH_OAUTH_URL = 'https://id.twitch.tv/oauth2/authorize?';
 
     constructor() { }
+    
     /**
      * Méthode qui va encoder les éléments de la table de hachage
      * passés en argument
@@ -87,11 +86,6 @@ export class TwitchApiService {
         if (params) {
             url = `${url}?${this.encodeQueryString(params)}`;
         }
-
-        // headers = new HttpHeaders()
-        // .set('Access-Control-Allow-Origin', 'http://localhost:4200')
-        // .set("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
-        // .set("Access-Control-Allow-Headers", "client_id, Content-Type, Authorization, X-Requested-With")
 
         return new Promise((resolve, reject) => {
             var xhr = new XMLHttpRequest();
