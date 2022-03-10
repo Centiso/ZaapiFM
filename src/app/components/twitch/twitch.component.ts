@@ -22,9 +22,9 @@ export class TwitchComponent implements OnInit {
   ngOnInit(): void {
     const params = this.twitchApiService.getUrlQueryStringParams();
 
-    // if(!this.twitchApiService.twitchIsAuthenticated()) {
-    //   this.twitchApiService.twitchAuth();
-    // }
+    if(!this.twitchApiService.twitchIsAuthenticated()) {
+      this.twitchApiService.twitchAuth();
+    }
 
     this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/search/channels", {
       "query": "dofus",
