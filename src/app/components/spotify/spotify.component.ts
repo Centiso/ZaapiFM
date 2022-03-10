@@ -1,28 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import SpotifyWebApi from 'spotify-web-api-js'; 
-declare var require : any;
-/* Acces a l’api Spotify JS */
-const Spotify = require('spotify-web-api-js'); 
-let spotify = new SpotifyWebApi ();
 
 @Component({
   selector: 'app-spotify',
   templateUrl: './spotify.component.html',
   styleUrls: ['./spotify.component.css']
 })
-
 export class SpotifyComponent implements OnInit {
   isConnected: boolean | undefined;
   token: string | undefined;
-  sParam: string | undefined;
-  nom_user: string | undefined;
+  sParam: string | undefined
   constructor() { }
 
-
-
-
   ngOnInit(): void {
-    
   }
 
   loginSpotify (): void{
@@ -50,8 +39,8 @@ export class SpotifyComponent implements OnInit {
 
     /* URL du site pour la redirection apres connexion ( lien encoder via le site ci−dessous) : https://www.url−encode−decode.com/ */
 
-    var redirect_uri = 'http%3A%2F%2Flocalhost%3A4200%2F%23access_token%3D9csk3b2i6rt19no9xn1sm89h27a629%26scope%3D%26token_type%3Dbearer';
-    const redirect = 'https://accounts.spotify.com/authorize?client_id=773daa976a4242229535987d2ab5483a&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2F%23access_token%3D9csk3b2i6rt19no9xn1sm89h27a629%26scope%3D%26token_type%3Dbearer';
+    var redirect_uri = 'http%3A%2F%2Flocalhost%3A4200%2Fcallback%2F';
+    const redirect = 'https://accounts.spotify.com/authorize?client_id=773daa976a4242229535987d2ab5483a&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2F';
    
     window.location.replace(redirect);
     
