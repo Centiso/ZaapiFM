@@ -1,1 +1,34 @@
-/* Commentaire */
+label {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    background-color: #a19678;
+    border-radius: 10px;
+    height: 500px;
+    width: 700px;
+    margin-top: 5%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+thead {
+    text-align: center;
+}
+
+tbody {
+    text-align: center;
+}
+
+.dofapi-component {
+    align-items: center;
+    align-content: center;
+}

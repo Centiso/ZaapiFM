@@ -1,32 +1,31 @@
 
-<div>
-    <h2 style="color: white; margin-top: 50px;">Dofapi test :</h2>
-    <div style="margin-top: 10px;">
-        <table style="background-color: rgb(181, 214, 91); border-radius: 5px;">
-            <thead style="text-align: center;">
-                <tr>
-                    <th> Name</th>
-                    <th> ID</th>
-                    <th> Type</th>
-                    <th> Item</th>
-                </tr>
-            </thead>
-            <tbody style="text-align: center;">
-                <tr *ngFor="let d of Dofusteuse">
-                    <td> {{d.name}}</td>
-                    <td> {{d.ankamaId}}</td>
-                    <td> {{d.type}}</td>
-                    <td> 
-                        <a href="{{d.url}}" target="_blank">
-                            <img 
-                            [src]="d.imgUrl" 
-                            height="64" 
-                            alt="Image de {{d.name}} venant de Dofus"
-                            title="{{d.name}}">
-                        </a>    
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="dofapi-component">
+    <label>Nom item</label>
+    <input required minlength="1" maxlength="30" size="20">
+    <table>
+        <thead>
+            <tr>
+                <th> Name</th>
+                <th> ID</th>
+                <th> Type</th>
+                <th> Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of Dofusteuse">
+                <td> {{d.name}}</td>
+                <td> {{d.ankamaId}}</td>
+                <td> {{d.type}}</td>
+                <td> 
+                    <a href="{{d.url}}" target="_blank">
+                        <img 
+                        [src]="d.imgUrl" 
+                        height="64" 
+                        alt="Image de {{d.name}} venant de Dofus"
+                        title="{{d.name}}">
+                    </a>    
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

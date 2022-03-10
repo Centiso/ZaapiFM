@@ -1,1 +1,6 @@
-/* Commentaire */
+.component {
+    background-color: gray;
+    border-width: 1px;
+    border-color: black;
+    border-style: dashed;
+}
