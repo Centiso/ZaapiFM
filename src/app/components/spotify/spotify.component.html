@@ -2,4 +2,15 @@
     <p>Lecteur de musique spotify</p>
     <button class="btn-default animation-on-hover" type = "button" (click)= "loginSpotify();">Connexion spotify</button>
     <h4> <div id="nom_user"> </div> </h4>
+
+
+    <h3> Saisir artiste / titre : &nbsp; <input id="son" required> &nbsp; &nbsp; &nbsp; <button class="btn btn-success animation-on-hover"
+    type="button" (click)="chercherSons();"> Rechercher </button> </h3>
+
+    <div class="container"> 
+        <div class="row">
+            <div id="song_0" class="col"></div>
+            <div id="song_1" class="col"></div> 
+        </div>
+    </div>
 </div>
