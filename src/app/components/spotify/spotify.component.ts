@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import SpotifyWebApi from 'spotify-web-api-js';
 import * as $ from 'jquery';
-
+let spotify = new SpotifyWebApi ();
 
 
 @Component({
@@ -17,6 +17,8 @@ export class SpotifyComponent implements OnInit {
   
   constructor() { }
 
+
+  
   ngOnInit(): void {
     /*
     spotify.setAccessToken(this.token?.toString() || "");
@@ -106,6 +108,11 @@ export class SpotifyComponent implements OnInit {
           while(count < max_songs && count < num_of_tracks){
             // Extract the id of the FIRST song from the data object
             let id = data.tracks.items[count].id;
+             /* AJOUT */
+              spotify.getTrack(id).then(function(data: any){
+              console . log ( data ) ; },
+              function(err: any){ console . error ( err );
+              } );
             // Constructing two different iframes to embed the song
             let src_str = `https://open.spotify.com/embed/track/${id}`;
             let iframe = `<div class='song'><iframe src=${src_str} frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div>`;
