@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
 h2 {
     color: white;;
 }
 
 .scroll-bar {
+    font-family: 'League Spartan', sans-serif;
     margin-top: 10px; 
     height:300px; 
     overflow: auto;
@@ -11,12 +14,14 @@ h2 {
 }
 
 .component {
+    font-family: 'League Spartan', sans-serif;
     position: relative; 
     width: 500px; 
     margin-top: 20px;
 }
 
 th {
+    font-family: 'League Spartan', sans-serif;
     position: sticky; 
     top: 0; width:20%; 
     background-color:rgb(190, 140, 236); 
@@ -24,41 +29,50 @@ th {
 }
 
 tbody {
+    font-family: 'League Spartan', sans-serif;
     text-align:center;
 }
 
 .jeu {
+    font-family: 'League Spartan', sans-serif;
     background-color:rgb(190, 140, 236); 
     border-bottom: 1px solid rgb(117, 112, 112);
 }
 
 .case-streamer {
+    font-family: 'League Spartan', sans-serif;
     width: 5%;
 }
 
 .case-jeu {
+    font-family: 'League Spartan', sans-serif;
     width: 5%;
     text-align: center;
 }
 
 .case-statut {
+    font-family: 'League Spartan', sans-serif;
     width: 1%;
 }
 
 .case-titre {
+    font-family: 'League Spartan', sans-serif;
     text-align: center;
 }
 
 td {
+    font-family: 'League Spartan', sans-serif;
     background-color:rgb(230, 226, 231); 
     border-bottom: 1px solid rgb(117, 112, 112);
 }
 
 thead {
+    font-family: 'League Spartan', sans-serif;
     height: 40px;
 }
 
 img {
+    font-family: 'League Spartan', sans-serif;
     width: 25px;
     height: 35px;
 }

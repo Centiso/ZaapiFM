@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
+
 .component {
+    font-family: 'League Spartan', sans-serif;
     background-color: gray;
     border-width: 1px;
     border-color: black;

@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
 .spotify {
+    font-family: 'League Spartan', sans-serif;
     margin-top: 20px;
     background-color: blue;
     width: 500px;
