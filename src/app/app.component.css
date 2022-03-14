@@ -74,6 +74,16 @@ center {
     height: 100vh;
 }
 
+
+/* POPOVER - NAVBAR */
+
+.corps {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
 .popover {
     position: relative;
     padding: 20px;
@@ -85,6 +95,7 @@ center {
 .hover {
     margin-bottom: 10px;
 }
+
 
 .contenu {
     visibility: hidden;
@@ -103,9 +114,3 @@ center {
     border-color: transparent transparent #bfbfbf transparent;
 }
 
-.corps {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-}
