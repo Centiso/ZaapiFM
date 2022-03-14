@@ -1,6 +1,9 @@
 <head>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- <script src="node_modules/bootstrap/js/dist/popover.js"></script> -->
+
 </head>
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="">
@@ -11,7 +14,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">Authentification</a>
@@ -19,16 +22,33 @@
       <li class="nav-item">
         <a class="nav-link" href="#">App</a>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
       <li class="nav-item">
-        <div class="popover">
-          <div class="hover">Tutoriel</div> 
-          <div class="contenu">
-            <div class="titre">Tutoriel</div>
-            <div class="corps">
-                Bienvenu sur l'application ZaapiFM
-            </div>
+        <a class="nav-link">Tutoriel</a>
+        <div class="wrapper">
+          <div class="content">
+          <div class="heading">Tutoriel</div>
+          <div class="corps">
+              Bienvenue sur ZaapiFM.
+              Ici sera présenté un petit tutoriel pour utiliser l'application.
+              Pour commencer :
+              
+          </div>
           </div>
         </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">À propos</a>
       </li>
     </ul>
   </div>
