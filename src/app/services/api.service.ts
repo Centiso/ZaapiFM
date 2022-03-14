@@ -10,7 +10,7 @@ export class ApiService {
 
   REST_API: string = 'https://fr.dofus.dofapi.fr/equipments?filter[where][level]=199';
   REQUEST_ALL_DOFAPI: string = 'https://fr.dofus.dofapi.fr/equipments';
-  REQUEST_BOTTES_HARRY: string = 'https://fr.dofus.dofapi.fr/equipments?filter[where][name]=Bottes%20Harry'
+  REQUEST_BOTTES_HARRY: string = 'https://fr.dofus.dofapi.fr/equipments?filter[where][name]=Bottes%20Henry'
 
   constructor( private httpClient: HttpClient) { }
 
