@@ -1,31 +1,45 @@
+<div>
+    <div>
+        <!--Barre de recherche du nom de l'item-->
+        <input type="text" id="ADEFINIR?" size="24">
 
-<div class="dofapi-component">
-    <label>Nom item</label>
-    <input required minlength="1" maxlength="30" size="20">
+        <!--Menu déroulant du prix des différentes runes-->
+        <!-- A AJOUTER DANS UN AUTRE COMPOSANT IDK
+        <ul *ngFor="let stat of statsItem">
+            <li>
+                <p> {{stat.nom}} </p>
+                <input type="text" id="ADEFINIR?" maxlength="8" size="6">
+            </li>
+        </ul>
+        -->
+    </div>
+
+    <!--Interface principale avec affichage de i containers-->
+        <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour ne pas afficher si le
+        résultat de la recherche d'item n'est pas assez précis / bon pour identifier
+        un item en particulier-->
     <table>
-        <thead>
-            <tr>
-                <th> Name</th>
-                <th> ID</th>
-                <th> Type</th>
-                <th> Item</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let d of Dofusteuse">
-                <td> {{d.name}}</td>
-                <td> {{d.ankamaId}}</td>
-                <td> {{d.type}}</td>
-                <td> 
-                    <a href="{{d.url}}" target="_blank">
-                        <img 
-                        [src]="d.imgUrl" 
-                        height="64" 
-                        alt="Image de {{d.name}} venant de Dofus"
-                        title="{{d.name}}">
-                    </a>    
-                </td>
-            </tr>
-        </tbody>
+        <tr *ngFor="let stat of statsItem">
+            <th> {{stat.nom}} </th>
+            <td *ngFor="let rune of stat.runes">
+                <p> {{rune.nom}} </p>
+                <input type="text" id="ADEFINIR?" maxlength="6" size="2">
+            </td>
+            <td *ngFor="let rune of stat.runes">
+                <p> {{rune.nom}} </p>
+              <input type="text" id="ADEFINIR?" maxlength="6" size="2">
+            </td>
+            <!--Affichage alternatif possible avec des *ngIf quand la stat ne possède pas 3 runes-->
+        </tr>
     </table>
+
+    <div>
+        <!--Bouton pour ajouter 1 container à i-->
+        <input type="button" id="addExo" name="Ajouter un Exo">
+
+        <!--Zone de texte représentant le prix final de FM-->
+        <p>Prix calculé : LMAO</p>
+    </div>
 </div>
+
+<!-- https://www.developpez.net/forums/d1984543/javascript/typescript/convertion-json-object-typescript-angular/ -->
