@@ -26,11 +26,13 @@
                 <th> {{stat.nom}} </th>
                 <td *ngFor="let rune of stat.runes">
                     <p> {{rune.nom}} </p>
-                    <input id="{{rune.nDebut}}" type="text" maxlength="6" size="3">
+                    <input #boxRune (blur)="updateNombreRuneDeb(rune, boxRune.value)"
+                        type="text" maxlength="6" size="3">
                 </td>
                 <td *ngFor="let rune of stat.runes">
                     <p> {{rune.nom}} </p>
-                  <input id="{{rune.nFin}}" type="text" maxlength="6" size="3">
+                    <input #boxRune (blur)="updateNombreRuneFin(rune, boxRune.value)"
+                        type="text" maxlength="6" size="3">
                 </td>
             </tr>
         </table>

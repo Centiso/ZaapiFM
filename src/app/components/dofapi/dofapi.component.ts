@@ -22,14 +22,6 @@ export class DofapiComponent implements OnInit {
   item: any = [];
   statsItem: Carac[] = new Array<Carac>();
 
-  /* Variables à créer :
-        - []Ensemble des Items (+stockage)
-        - Nom de l'item
-        - []Caractéristiques de l'item (?)
-        - Exo
-        - PrixTotal
-  */
-
 // Constructeur
   constructor( private apiService: ApiService) {
     this.tCaracs = apiService.getStatistiques();
@@ -47,8 +39,21 @@ export class DofapiComponent implements OnInit {
       this.item = JSON.parse(JSON.stringify(res));
       this.getStatsItem();
       console.log("TEST", this.item);
+      console.log("TESTSTATS", this.statsItem);
     });
        
+  }
+
+  updateNombreRuneDeb(rune: Rune, val: string): void{
+    if(val)
+      rune.setNombreRuneDeb(parseInt(val));
+    console.log(rune);
+  }
+
+  updateNombreRuneFin(rune: Rune, val: string): void{
+    if(val)
+      rune.setNombreRuneFin(parseInt(val));
+    console.log(rune);
   }
 
 /*  Lorsque l'utilisateur recherche un item : 
@@ -78,16 +83,6 @@ export class DofapiComponent implements OnInit {
         }
       }
     } 
-  }
-
-/*  Initialisation du menu de prix des runes :
- *    TRIGGER : recherche correcte
- *    - Prend le tableau de stats en paramètre
- *    - Initialise le menu déroulant avec les dépendances aux champs de texte
- *    - Respecte un "template" Dofus-Responsive (ordre prédéfini quelque soit l'item)
- */
-  initialiserMenuPrix(): void {
-
   }
 
 /*  Ajoute une ligne de statistique en exo :

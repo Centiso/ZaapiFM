@@ -96,6 +96,7 @@ export class Carac{
 }
 
 export class Rune{
+  id: string;
   nom: string;
   nDebut: number;
   nFin: number;
@@ -108,12 +109,16 @@ export class Rune{
       case 2:  this.nom = "Ra " + nom; break;
       default: this.nom = "missingN0"; break;
     }
+    this.id = nom + n.toString();
     this.nDebut = 0;
     this.nFin = 0;
     this.prix = 0;
   }
 
   // Méthodes
+  updateNombreRuneDeb(s: string): void{
+    this.nDebut = parseInt(s);
+  }
   setNombreRuneDeb(n: number): void{ this.nDebut = n; }
   setNombreRuneFin(n: number): void{ this.nFin = n; }
   setPrixRune(p: number): void{ this.prix = p; }
