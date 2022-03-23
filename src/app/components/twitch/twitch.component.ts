@@ -29,7 +29,7 @@ export class TwitchComponent implements OnInit {
     this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/search/channels", {
       "query": "dofus",
       "live_only": true,
-      "first": 50
+      "first": 15
     }, {
       "client-id": this.twitchApiService.CLIENT_ID_APP,
       "Authorization": `Bearer ${params.access_token}`

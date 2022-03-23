@@ -27,37 +27,56 @@ h1 {
 
 .menu-deroulant {
     font-family: 'League Spartan', sans-serif;
-    background-color: white;
+    background-color: #534340;
     margin-top: 5%;
-    border-radius: 10px;
-    width: 500px;
+    border-radius: 5px;
+    width: 700px;
     height: 200px;
     display: flex;
     align-items: center;
     text-align: center;
-    color: blue;
+    color: #C5D8A4;
+    margin: auto;
 }
 
 body {
     font-family: 'League Spartan', sans-serif;
-    background-color: #272a20;
+    background-color: #BB9981;
 }
 
 .col-md-7 {
     font-family: 'League Spartan', sans-serif;
     margin-top: 50px;
     height: 700px;
-    background-color: #272a20;
+    background-color: #BB9981;
 }
 
 .right-side {
     font-family: 'League Spartan', sans-serif;
-    background-color: #272a20;
-    margin-top: auto;
-    height: 700px;
-    width: 550px;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: yellow;
+    margin-top: 2%;
+    align-items: center;
+    text-align: center;
+    margin-right: 1%;
+}
+
+.left-side {
+    font-family: 'League Spartan', sans-serif;
+    background-color: black;
+    margin-top: 2%;
+    align-items: center;
+    text-align: center;
+    margin-left: 1%;
+}
+
+.spotify {
+    font-family: 'League Spartan', sans-serif;
+    background-color: red;
+}
+
+.twitch {
+    font-family: 'League Spartan', sans-serif;
+    background-color: darkgreen;
 }
 
 p {
@@ -74,23 +93,27 @@ center {
     height: 100vh;
 }
 
-.popover {
+
+/* POPOVER - NAVBAR */
+
+.corps {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+.wrapper {
     position: relative;
-    padding: 20px;
+    padding: 10px;
 }
-.popover:hover .content {
-    visibility: visible;
-}
-
-.hover {
-    margin-bottom: 10px;
-}
-
-.contenu {
+  
+.content {
+    width: 500px;
     visibility: hidden;
     background-color: #bfbfbf;
     position: absolute;
-    padding: 15px;
+    padding: 20px;
 }
 
 .content:before {
@@ -99,13 +122,10 @@ center {
     content: "";
     right: calc(50% - 10px);
     border-style: solid;
-    border-width: 0 10px 10px 10px;
     border-color: transparent transparent #bfbfbf transparent;
 }
 
-.corps {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+.wrapper:hover .content {
+    visibility: visible;
 }
+

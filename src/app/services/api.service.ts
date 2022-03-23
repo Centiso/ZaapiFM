@@ -90,7 +90,7 @@ export class Carac{
     this.nom = nom;
     this.runes = new Array<Rune>();
     for (let i = 0; i < n; i++) {
-      this.runes.push( new Rune(dim, i) );      
+      this.runes.push( new Rune(dim, i) );
     }
   }
 }
