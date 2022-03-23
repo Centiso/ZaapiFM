@@ -21,20 +21,19 @@
         <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour ne pas afficher si le
         résultat de la recherche d'item n'est pas assez précis / bon pour identifier
         un item en particulier-->
-    <table>
-        <tr *ngFor="let stat of statsItem">
-            <th> {{stat.nom}} </th>
-            <td *ngFor="let rune of stat.runes">
-                <p> {{rune.nom}} </p>
-                <!--<input id="{{rune.nDebut}}" type="text" maxlength="6" size="3"> -->
-                <!--<input [(ngModel)]="valDeb[task.key]" id="task.fieldName" *ngIf="task.key === 'Others'" type="text" class="form-control"> -->
-            </td>
-            <td *ngFor="let rune of stat.runes">
-                <p> {{rune.nom}} </p>
-              <input id="{{rune.nFin}}" type="text" maxlength="6" size="3">
-            </td>
-        </tr>
-    </table>
+        <table>
+            <tr *ngFor="let stat of statsItem">
+                <th> {{stat.nom}} </th>
+                <td *ngFor="let rune of stat.runes">
+                    <p> {{rune.nom}} </p>
+                    <input id="{{rune.nDebut}}" type="text" maxlength="6" size="3">
+                </td>
+                <td *ngFor="let rune of stat.runes">
+                    <p> {{rune.nom}} </p>
+                  <input id="{{rune.nFin}}" type="text" maxlength="6" size="3">
+                </td>
+            </tr>
+        </table>
 
     <div>
         <!--Bouton pour ajouter 1 container à i-->
