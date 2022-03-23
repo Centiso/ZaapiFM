@@ -7,8 +7,9 @@ h2 {
 .component {
     font-family: 'League Spartan', sans-serif;
     position: relative; 
-    width: 500px; 
+    width: 450px; 
     margin-top: 20px;
+    margin: auto;
 }
 
 .jeu {

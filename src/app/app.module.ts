@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ApiService } from './services/api.service';
 import { TwitchApiService } from './services/twitch.api.service';
+import { DofaprixComponent } from './components/dofaprix/dofaprix.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TwitchApiService } from './services/twitch.api.service';
     DofapiComponent,
     SpotifyComponent,
     TwitchComponent,
-    PixabayComponent
+    PixabayComponent,
+    DofaprixComponent
   ],
   imports: [
     BrowserModule,

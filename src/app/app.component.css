@@ -53,7 +53,6 @@ body {
 
 .right-side {
     font-family: 'League Spartan', sans-serif;
-    background-color: yellow;
     margin-top: 2%;
     align-items: center;
     text-align: center;
@@ -62,7 +61,6 @@ body {
 
 .left-side {
     font-family: 'League Spartan', sans-serif;
-    background-color: black;
     margin-top: 2%;
     align-items: center;
     text-align: center;
@@ -71,12 +69,12 @@ body {
 
 .spotify {
     font-family: 'League Spartan', sans-serif;
-    background-color: red;
 }
 
 .twitch {
     font-family: 'League Spartan', sans-serif;
-    background-color: darkgreen;
+    align-items: center;
+    margin: auto;
 }
 
 p {
