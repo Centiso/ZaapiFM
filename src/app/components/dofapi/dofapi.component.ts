@@ -1,6 +1,7 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 //import * as internal from 'stream';
+//import * as internal from 'stream';
 import { ApiService } from './../../services/api.service';
 import { Carac } from './../../services/api.service';
 import { Rune } from './../../services/api.service';
@@ -44,15 +45,10 @@ export class DofapiComponent implements OnInit {
     this.apiService.GetBottesHarry().subscribe(res => {
       console.log(res);
       this.item = JSON.parse(JSON.stringify(res));
-      this.lancerPagePlease();
+      this.getStatsItem();
       console.log("TEST", this.item);
     });
        
-  }
-
-  lancerPagePlease(): void{
-    this.getStatsItem(); 
-    console.log("Stats de l'objet : ", this.statsItem);
   }
 
 /*  Lorsque l'utilisateur recherche un item : 
@@ -62,6 +58,7 @@ export class DofapiComponent implements OnInit {
  *    - Lance l'initialisation des cartes de FMs selon les statistiques
  *    - Lance l'initialisation du menu des prix selon les statistiques
  */
+
   rechercherItem(): void {
     
   }
@@ -73,12 +70,6 @@ export class DofapiComponent implements OnInit {
  */
   getStatsItem(): void {
     let i, j;
-    console.log(this.tCaracs.length);
-    console.log(this.tCaracs);
-    console.log("item : ", this.item[0].statistics[0]);
-    console.log("stat", this.item[0].statistics.length, this.item[0].statistics[4]);
-    console.log("testKeys :", Object.keys(this.item[0].statistics[7])[0]);
-    
     for( i = 0 ; i < this.tCaracs.length ; i++ ){
       for( j = 0 ; j < this.item[0].statistics.length ; j++ ){
         if(Object.keys(this.item[0].statistics[j])[0] == this.tCaracs[i].nom){
@@ -86,8 +77,7 @@ export class DofapiComponent implements OnInit {
           this.statsItem.push(this.tCaracs[i]);
         }
       }
-    }
-    
+    } 
   }
 
 /*  Initialisation du menu de prix des runes :
@@ -117,29 +107,26 @@ export class DofapiComponent implements OnInit {
  *    - Calcule le prix de revient de l'item & l'affiche si toutes les dépendances
  *      sont bien conçues
  */
-  calculerPrixTotal(): void {
-
+  calculerPrixTotal(): number {
+    let prixTot = 0;
+    let i, j;
+    for( i = 0 ; i < this.statsItem.length ; i++ ){
+      for( j = 0 ; j < this.statsItem[i].runes.length ; j++ ){
+        prixTot += (this.statsItem[i].runes[j].nFin - this.statsItem[i].runes[j].nDebut) * this.statsItem[i].runes[j].prix;
+      }
+    }
+    return prixTot;
   }
 
 }
 
 /* Plan de jeu :
-      - Définir précisément le schéma front (les *ngFor)
-      - Définir les collections à utiliser
       - Récupérer le contenu des collections :
         - Requête REST à l'APi
         - Récupération & stockage en BDD
           - MongoDB & Atlas ? (tuto Umtice)
           - Utilisation de la BDD
           || Requête API + précise
-      - Variables à créer :
-        - Enum caractéristiques ?
-        - []Ensemble des Items (+stockage)
-        - Nom de l'item
-        - []Caractéristiques de l'item (?)
-        - [nomrune][caractéristique][nombredebut][nombrefin][prixrune]
-        - Exo
-        - PrixTotal
       - Récupérer le nom de l'item depuis l'input texte
       - Filtre dans la BDD de l'ensemble des items
         || Requete API précise et *ngIf(==1 resultat): affichage
@@ -148,7 +135,6 @@ export class DofapiComponent implements OnInit {
       - Récupération du contenu des zones de textes générées pour le prix
         - Stockage dans le mégatableau de runes
       - Gestion du bouton d'ajout d'exo (+1 ligne tableau carac item)
-      - Calcul du prix de l'item
       - Création d'un bouton pour passer au prochain item
       - FIN?
 */

@@ -10,7 +10,7 @@ export class ApiService {
 
   REST_API: string = 'https://fr.dofus.dofapi.fr/equipments?filter[where][level]=199';
   REQUEST_ALL_DOFAPI: string = 'https://fr.dofus.dofapi.fr/equipments';
-  REQUEST_BOTTES_HARRY: string = 'https://fr.dofus.dofapi.fr/equipments?filter[where][name]=Bottes%20Harry'
+  REQUEST_BOTTES_HARRY: string = 'https://fr.dofus.dofapi.fr/equipments?filter[where][name]=Cape au Logis'
 
   constructor( private httpClient: HttpClient) { }
 
@@ -69,6 +69,10 @@ export class ApiService {
       new Carac("Dommages aux Sorts", "Do Per So", 1),
       new Carac("% Critique", "Cri", 1),
       new Carac("Soins", "So", 2),
+      new Carac("Esquive PA", "Re PA", 2),
+      new Carac("Esquive PM", "Re PM", 2),
+      new Carac("Retrait PA", "Ret PA", 2),
+      new Carac("Retrait PM", "Ret PM", 2),
       new Carac("Dommages Renvoi", "Do Ren", 1),
       new Carac("Invocation", "Invo", 1),
       new Carac("Portée", "PO", 1),
