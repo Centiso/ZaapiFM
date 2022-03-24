@@ -64,7 +64,8 @@ body {
     margin-top: 2%;
     align-items: center;
     text-align: center;
-    margin-left: 1%;
+    margin: auto;
+    background-color: #C5D8A4;
 }
 
 .spotify {
@@ -92,38 +93,4 @@ center {
 }
 
 
-/* POPOVER - NAVBAR */
-
-.corps {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-.wrapper {
-    position: relative;
-    padding: 10px;
-}
-  
-.content {
-    width: 500px;
-    visibility: hidden;
-    background-color: #bfbfbf;
-    position: absolute;
-    padding: 20px;
-}
-
-.content:before {
-    position: absolute;
-    top: -10px;
-    content: "";
-    right: calc(50% - 10px);
-    border-style: solid;
-    border-color: transparent transparent #bfbfbf transparent;
-}
-
-.wrapper:hover .content {
-    visibility: visible;
-}
 

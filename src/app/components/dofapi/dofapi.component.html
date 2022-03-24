@@ -1,10 +1,9 @@
-<div>
-    <div>
-        <!--Barre de recherche du nom de l'item-->
-        <div class="input-group flex-nowrap">
-            <span class="input-group-text" id="addon-wrapping">Item</span>
-            <input type="text" class="form-control" aria-label="Item" aria-describedby="addon-wrapping" style="margin-right: 300px;">
-        </div>
+<div class="container-fluid">
+    <div class="row" style="margin: auto;">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="Item">
+            <label for="floatingInput" style="color: #534340; margin-left: 2%;">Item</label>
+          </div>
 
         <!--Menu déroulant du prix des différentes runes-->
         <!-- A AJOUTER DANS UN AUTRE COMPOSANT IDK
@@ -15,9 +14,8 @@
             </li>
         </ul>
         -->
-    </div>
 
-    <!--Interface principale avec affichage de i containers-->
+        <!--Interface principale avec affichage de i containers-->
         <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour ne pas afficher si le
         résultat de la recherche d'item n'est pas assez précis / bon pour identifier
         un item en particulier-->
@@ -34,6 +32,9 @@
                 </td>
             </tr>
         </table>
+    </div>
+
+    
 
     <div>
         <!--Bouton pour ajouter 1 container à i-->
