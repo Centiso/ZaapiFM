@@ -3,47 +3,41 @@
         <!--Barre de recherche du nom de l'item-->
         <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping">Item</span>
-            <input type="text" class="form-control" aria-label="Item" aria-describedby="addon-wrapping" style="margin-right: 300px;">
+            <input #boxNom (keyup.enter)="rechercherItem(boxNom.value)"
+                type="text" class="form-control" aria-label="Item" aria-describedby="addon-wrapping" style="margin-right: 300px;">
         </div>
 
-        <!--Menu déroulant du prix des différentes runes-->
-        <!-- A AJOUTER DANS UN AUTRE COMPOSANT IDK
-        <ul *ngFor="let stat of statsItem">
-            <li>
-                <p> {{stat.nom}} </p>
-                <input type="text" id="ADEFINIR?" maxlength="8" size="6">
-            </li>
-        </ul>
-        -->
     </div>
 
-    <!--Interface principale avec affichage de i containers-->
-        <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour ne pas afficher si le
-        résultat de la recherche d'item n'est pas assez précis / bon pour identifier
-        un item en particulier-->
-        <table>
-            <tr *ngFor="let stat of statsItem">
-                <th> {{stat.nom}} </th>
-                <td *ngFor="let rune of stat.runes">
-                    <p> {{rune.nom}} </p>
-                    <input #boxRune (blur)="updateNombreRuneDeb(rune, boxRune.value)"
-                        type="text" maxlength="6" size="3">
-                </td>
-                <td *ngFor="let rune of stat.runes">
-                    <p> {{rune.nom}} </p>
-                    <input #boxRune (blur)="updateNombreRuneFin(rune, boxRune.value)"
-                        type="text" maxlength="6" size="3">
-                </td>
-            </tr>
-        </table>
+    <!--Tableau avec affichage des statistiques de statsItem -->
+        <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour prévenir
+        l'utilisateur si la requête REST ne retourne pas de résultats -->
+    <table>
+        <tr *ngFor="let stat of statsItem">
+            <th> {{stat.nom}} </th>
+            <td *ngFor="let rune of stat.runes">
+                <p> {{rune.nom}} </p>
+                <input #boxRune (blur)="updateNombreRuneDeb(rune, boxRune.value)"
+                    type="text" maxlength="6" size="3">
+            </td>
+            <td *ngFor="let rune of stat.runes">
+                <p> {{rune.nom}} </p>
+                <input #boxRune (blur)="updateNombreRuneFin(rune, boxRune.value)"
+                    type="text" maxlength="6" size="3">
+            </td>
+        </tr>
+    </table>
 
     <div>
-        <!--Bouton pour ajouter 1 container à i-->
-        <input type="button" id="addExo" value="Ajouter un Exo">
+        <!--Menu pour selectionner une statistique à ajouter dans statsItem -->
+        <select name="Ajouter un Exo">  
+            <option *ngFor="let stat of tCaracs" (click)="ajouterExo(stat)">{{stat.nom}}</option>
+        </select>
+        <input (click)="supprimerExo()" type="button" id="addExo" value="Supprimer un Exo">
 
-        <!--Zone de texte représentant le prix final de FM-->
-        <p>Prix calculé : LMAO</p>
+        <!--Zone de texte représentant le prix final de FM -->
+        <p>Prix calculé : {{affichagePrix()}}</p>
     </div>
-</div>
+    
 
-<!-- https://www.developpez.net/forums/d1984543/javascript/typescript/convertion-json-object-typescript-angular/ -->
+</div>
