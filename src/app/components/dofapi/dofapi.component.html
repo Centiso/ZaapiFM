@@ -30,7 +30,7 @@
 
     <div>
         <!--Menu pour selectionner une statistique à ajouter dans statsItem -->
-        <select name="Ajouter un Exo">  
+        <select name="Ajouter un Exo">
             <option *ngFor="let stat of tCaracs" (click)="ajouterExo(stat)">{{stat.nom}}</option>
         </select>
         <input (click)="supprimerExo()" type="button" id="addExo" value="Supprimer un Exo">
@@ -38,6 +38,6 @@
         <!--Zone de texte représentant le prix final de FM -->
         <p>Prix calculé : {{affichagePrix()}}</p>
     </div>
-    
+
 
 </div>

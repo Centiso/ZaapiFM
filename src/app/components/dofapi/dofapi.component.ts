@@ -30,10 +30,10 @@ export class DofapiComponent implements OnInit {
     this.apiService.getItemRecherche("Bottes Harry");
   }
 
-/* Récupère la valeur de l'input de recherche d'item pour 
+/* Récupère la valeur de l'input de recherche d'item pour
 former la requête REST */
   rechercherItem(nom: string): void {
-    this.apiService.getItemRecherche(nom);    
+    this.apiService.getItemRecherche(nom);
   }
 
 /* Récupère les valeurs des inputs dynamiques et affecte

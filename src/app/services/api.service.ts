@@ -19,10 +19,10 @@ export class ApiService {
   statsItem: Carac[] = new Array<Carac>(); // Réprésentation dynamique des caractéristiques de l'item
   prixTotal: number = 0; // Prix Total de la forgemagie
   nbExo: number = 0; // Nombre de caractéristiques en exo (non natives de l'item)
-  
+
 /* Tableau initialisant l'ensemble des caractéristiques du jeu & leur runes associées */
   tCaracs: Carac[] = [
-    new Carac("Vitalité", "Vi", 3), 
+    new Carac("Vitalité", "Vi", 3),
     new Carac("Force", "Fo", 3),
     new Carac("Intelligence", "Ine", 3),
     new Carac("Chance", "Cha", 3),
