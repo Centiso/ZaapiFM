@@ -1,1 +1,11 @@
-<p>dofaprix works!</p>
+<div>
+    <ul>
+        <ng-container *ngFor="let stat of statsItem">
+            <li *ngFor="let rune of stat.runes">
+                <p>{{rune.nom}}</p>
+                <input #boxPrix (blur)="sendPrixRune(rune, borPrix.value)"
+                    type="text" maxlength="8" size="3">
+            </li>
+        </ng-container>
+    </ul>
+</div>

@@ -7,28 +7,33 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
   providedIn: 'root'
 })
 export class ApiService {
-
-  REST_API: string = 'https://fr.dofus.dofapi.fr/equipments?filter[where][level]=199';
+// Variables
+  REQUEST_LVL199: string = 'https://fr.dofus.dofapi.fr/equipments?filter[where][level]=199';
   REQUEST_ALL_DOFAPI: string = 'https://fr.dofus.dofapi.fr/equipments';
   REQUEST_BOTTES_HARRY: string = 'https://fr.dofus.dofapi.fr/equipments?filter[where][name]=Cape au Logis'
 
+// Constructeur
   constructor( private httpClient: HttpClient) { }
 
-  GetDofusteuse() {
-    console.log(this.httpClient.get(`${this.REST_API}`));
-    return this.httpClient.get(`${this.REST_API}`);
-  }
-
+// Méthodes
+/* Récupère tous les équipements de la base de données */
   GetItemsDofapi() {
     console.log(this.httpClient.get(`${this.REQUEST_ALL_DOFAPI}`));
     return this.httpClient.get(`${this.REQUEST_ALL_DOFAPI}`);
   }
 
+/* Récupère les Bottes Harry (pour tests) */
   GetBottesHarry(){
     console.log(this.httpClient.get(`${this.REQUEST_BOTTES_HARRY}`));
     return this.httpClient.get(`${this.REQUEST_BOTTES_HARRY}`);
   }
 
+/* Fait passer la réprésentation de l'objet à dofaprix */
+  passePrixRune(rune: Rune, val: string): void{
+    
+  }
+
+/* Retourne un tableau de toutes les caractéristiques */
   getStatistiques(){
     return [
       new Carac("Vitalité", "Vi", 3),
@@ -77,8 +82,7 @@ export class ApiService {
       new Carac("Invocation", "Invo", 1),
       new Carac("Portée", "PO", 1),
       new Carac("PA", "Ga PA", 1),
-      new Carac("PM", "Ga PM", 1)
-    ];
+      new Carac("PM", "Ga PM", 1)];
   }
 }
 
@@ -115,14 +119,10 @@ export class Rune{
     this.prix = 0;
   }
 
-  // Méthodes
-  updateNombreRuneDeb(s: string): void{
-    this.nDebut = parseInt(s);
-  }
   setNombreRuneDeb(n: number): void{ this.nDebut = n; }
   setNombreRuneFin(n: number): void{ this.nFin = n; }
   setPrixRune(p: number): void{ this.prix = p; }
-  calculePrix(): number{
+  calculePrixRune(): number{
     return( (this.nFin - this.nDebut) * this.prix );
   }
 }
