@@ -52,12 +52,16 @@ td {
 }
 
 .card {
-    background: linear-gradient(#C5D8A4, #F4FCD9);
+    background: linear-gradient( rgb(133, 111, 82) , #f1ffc5);
+}
+
+.card-text {
+    font-size: 1;
 }
 
 img {
-    width: 150px; 
-    height: 150px; 
+    width: 120px; 
+    height: 120px; 
     margin: auto; 
     border-radius: 5px; 
     margin-top: 5px;
