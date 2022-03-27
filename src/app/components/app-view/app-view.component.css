@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
+
+header {
+    font-family: 'League Spartan', sans-serif;
+    background-color: #b18262; 
+    border-radius: 30px; 
+    margin-left: 20px; 
+    margin-top: 10px; 
+    margin-right: 20px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+h1 {
+    font-family: 'League Spartan', sans-serif;
+    color: white;
+    margin-left: 20px;
+}
+
+.api-pixabay {
+    font-family: 'League Spartan', sans-serif;
+    margin-top: 10px; 
+    margin-left: 5%;
+}
+
+.menu-deroulant {
+    font-family: 'League Spartan', sans-serif;
+    background-color: #534340;
+    margin-top: 5%;
+    border-radius: 5px;
+    width: 700px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #C5D8A4;
+    margin: auto;
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    background-color: #BB9981;
+}
+
+.col-md-7 {
+    font-family: 'League Spartan', sans-serif;
+    margin-top: 50px;
+    height: 700px;
+    background-color: #BB9981;
+}
+
+.right-side {
+    font-family: 'League Spartan', sans-serif;
+    margin-top: 2%;
+    align-items: center;
+    text-align: center;
+    margin-right: 1%;
+}
+
+.left-side {
+    font-family: 'League Spartan', sans-serif;
+    margin-top: 2%;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    background-color: #C5D8A4;
+}
+
+.spotify {
+    font-family: 'League Spartan', sans-serif;
+}
+
+.twitch {
+    font-family: 'League Spartan', sans-serif;
+    align-items: center;
+    margin: auto;
+}
+
+p {
+    font-family: 'League Spartan', sans-serif;
+    margin: auto;
+}
+
+center {
+    font-family: 'League Spartan', sans-serif;
+    margin:auto;
+    padding:auto;
+    font-family: sans-serif;
+    background: linear-gradient(#E0EAFC, #CFDEF3);
+    height: 100vh;
+}
+
+
+

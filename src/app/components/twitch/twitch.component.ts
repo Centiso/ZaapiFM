@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TwitchApiService } from 'src/app/services/twitch.api.service';
-import { interval } from 'rxjs';
 
 
 @Component({

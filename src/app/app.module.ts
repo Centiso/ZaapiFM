@@ -13,6 +13,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './services/api.service';
 import { TwitchApiService } from './services/twitch.api.service';
 import { DofaprixComponent } from './components/dofaprix/dofaprix.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { AppViewComponent } from './components/app-view/app-view.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthService } from './services/auth.service';
+
+const appRoutes: Routes = [
+  {path: 'dofapi', component: DofapiComponent},
+  {path: 'spotify', component: SpotifyComponent},
+  {path: 'twitch', component: TwitchComponent},
+  {path: 'auth', component: AuthComponent},
+  {path: '', component: AppViewComponent}
+]
 
 @NgModule({
   declarations: [
@@ -21,16 +33,20 @@ import { DofaprixComponent } from './components/dofaprix/dofaprix.component';
     SpotifyComponent,
     TwitchComponent,
     PixabayComponent,
-    DofaprixComponent
+    DofaprixComponent,
+    AuthComponent,
+    AppViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     ApiService,
-    TwitchApiService
+    TwitchApiService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
