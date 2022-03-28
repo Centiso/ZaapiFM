@@ -63,7 +63,7 @@ export class ApiService {
     new Carac("Dommages Pièges", "Do Pi", 2),
     new Carac("Dommages Distance", "Do Per Di", 1),
     new Carac("Dommages Mêlée", "Do Per Mé", 1),
-    new Carac("Dommages aux Sorts", "Do Per So", 1),
+    new Carac("% Dommages aux sorts", "Do Per So", 1),
     new Carac("Esquive PA", "Re PA", 2),
     new Carac("Esquive PM", "Re PM", 2),
     new Carac("Retrait PA", "Ret PA", 2),
@@ -84,8 +84,8 @@ export class ApiService {
       this.statsItem.pop();
     this.httpClient.get(`${requete}`).subscribe(res => {
       this.getStatsItem(JSON.parse(JSON.stringify(res)));
+      console.log(JSON.parse(JSON.stringify(res)));
     });
-    console.log("BACKgetItem4 : ", this.statsItem);
   }
 
 /* Compare le nom de la statistique dans la réponse de l'API au nom des
