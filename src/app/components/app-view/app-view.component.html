@@ -37,8 +37,8 @@
                 </div>
                 <div class="modal-body" style="color: white;">
                   Bienvenue jeune âme ! ZaapiFM est une interface qui se veut une aide pour les forgemages aguerris du monde des Douze. Cet outil vous permettra à long terme, de contrôler précisément vos dépenses en forgemagie, afin à terme de mieux vendre vos items, et de vous permettre d'identifier les objets à meilleure marge pour STONKS sur DOFUS !
-	Vous trouverez une barre de recherche pour y mettre le nom de l'objet que vous souhaitez forgemager InGame. Les statistiques de l'objets seront automatiquement importées et l'interface créée. Vous pourrez saisir dans la colonne "début" le nombre de runes que vous possédez au début de la forgemagie, puis effectuer autant de forgemagie que vous le souhaitez sur votre objet InGame. Une fois que le résultat vous satisfait, rentrez le nombre de runes qu'il vous reste en fin de forgemagie, puis orientez vous vers votre Hotel de Vente des runes pour remplir les champs de prix des runes.
-	Le calcul s'effectuera automatiquement et le prix final est le coût total de votre forgemagie. Merci d'avoir utilisé ZaapiFM, et en esperant que ce site devienne votre principal atout commercial sur vos concurrents ! (fuck Licori)
+	                Vous trouverez une barre de recherche pour y mettre le nom de l'objet que vous souhaitez forgemager InGame. Les statistiques de l'objets seront automatiquement importées et l'interface créée. Vous pourrez saisir dans la colonne "début" le nombre de runes que vous possédez au début de la forgemagie, puis effectuer autant de forgemagie que vous le souhaitez sur votre objet InGame. Une fois que le résultat vous satisfait, rentrez le nombre de runes qu'il vous reste en fin de forgemagie, puis orientez vous vers votre Hotel de Vente des runes pour remplir les champs de prix des runes.
+	                Le calcul s'effectuera automatiquement et le prix final est le coût total de votre forgemagie. Merci d'avoir utilisé ZaapiFM, et en esperant que ce site devienne votre principal atout commercial sur vos concurrents ! (fuck Licori)
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #C5D8A4;">Compris !</button>
@@ -58,7 +58,6 @@
   
   <!-- Body -->
   <body>
-  
     <div class="container-fluid">
       <div class="row">
         <div class="col left-side">
@@ -68,16 +67,24 @@
           <div class="menu-deroulant" style="background-color: #534340;">
             <app-dofaprix></app-dofaprix>
           </div>
-          <div class="spotify">
+          <div class="spotify" *ngIf="divSpotify">
             <app-spotify></app-spotify>
           </div>
-          <div class="twitch">
+          <div  class="twitch">
             <app-twitch></app-twitch>
+          </div>
+          <div style="border: solid #534340; border-radius: 5px; margin-left: 25%; margin-right: 25%;">
+            <a href="https://www.twitch.tv/login?client_id=qp871hruk96hd4h5mh8yaeo5n96wby&redirect_params=client_id%3Dqp871hruk96hd4h5mh8yaeo5n96wby%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A4200%252F%26response_type%3Dtoken%26scopes%3Dchannel%253Aread%253Asubscriptions">
+              <img href="" src="http://pngimg.com/uploads/twitch/twitch_PNG49.png" width="100" height="100"/>
+            </a>
+            <a href="https://accounts.spotify.com/authorize?client_id=773daa976a4242229535987d2ab5483a&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2F">
+              <img href="#" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1024px-Spotify_logo_without_text.svg.png" width="85" height="83" onclick="divSpotifyFunction()"/>
+            </a>    
+            <!--<button class="btn-default animation-on-hover" type = "button" onclick= "loginSpotify();">Connexion spotify</button> -->
           </div>
         </div>
       </div>
     </div>
-  
   </body>
   
   
@@ -95,7 +102,7 @@
             <!--Grid column-->
             <div class="col-auto">
               <p class="pt-2">
-                <strong>Sign up for our newsletter</strong>
+                <strong>Inscris toi à notre newsletter</strong>
               </p>
             </div>
             <!--Grid column-->
@@ -115,7 +122,7 @@
             <div class="col-auto">
               <!-- Submit button -->
               <button type="submit" class="btn btn-outline-light mb-4" style="background-color: #534340;">
-                Subscribe
+                Souscrire
               </button>
             </div>
             <!--Grid column-->
@@ -221,7 +228,7 @@
         <p>
           Cette application a été réalisée dans le cadre d'un projet étudiant à la faculté du Maine.
           Le but était de construire une "Single Page Application" en s'aidant du framwork Angular. 
-          Il nous a été demandé d'utiliser des API. Nous avons choisi d'utiliser les API Dofapi, Twitch, Pixabay et Spotify.
+          Il nous a été demandé d'utiliser des API. Nous avons choisi d'utiliser les API Dofapi, Twitch et Spotify.
         </p>
       </div>
     </div>

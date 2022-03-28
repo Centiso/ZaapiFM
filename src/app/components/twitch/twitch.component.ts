@@ -14,6 +14,7 @@ export class TwitchComponent implements OnInit {
 
 
   StreamerList: any = [];
+  divTwitch :boolean = true;
 
   constructor(private twitchApiService: TwitchApiService) { }
 
@@ -22,9 +23,9 @@ export class TwitchComponent implements OnInit {
     const params = this.twitchApiService.getUrlQueryStringParams();
 
     if(!this.twitchApiService.twitchIsAuthenticated()) {
-      this.twitchApiService.twitchAuth();
+      //this.twitchApiService.twitchAuth();
     }
-
+    
     this.twitchApiService.makeGetJsonRequest("https://api.twitch.tv/helix/search/channels", {
       "query": "dofus",
       "live_only": true,
