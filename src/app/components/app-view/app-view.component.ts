@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-app-view',
   templateUrl: './app-view.component.html',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppViewComponent implements OnInit {
 
+  // les div sont cachés par défaut
+  divTwitch :boolean = false;
+  divSpotify :boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  
+
+
+  divSpotifyFunction() {
+    this.divSpotify = true;
+  }
 }
+

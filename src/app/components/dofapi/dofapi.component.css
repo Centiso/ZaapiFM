@@ -19,6 +19,7 @@ table {
     height: 500px;
     width: 700px;
     margin-top: 5%;
+    margin: auto;
     align-items: center;
 }
 

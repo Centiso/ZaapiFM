@@ -9,28 +9,26 @@ let spotify = new SpotifyWebApi ();
   templateUrl: './spotify.component.html',
   styleUrls: ['./spotify.component.css']
 })
+
 export class SpotifyComponent implements OnInit {
   isConnected: boolean | undefined;
   token: string | undefined;
   sParam: string | undefined;
   raw_search_query: string | undefined;
+  divSpotify :boolean = false;
   
   constructor() { }
 
 
   
   ngOnInit(): void {
-    /*
-    spotify.setAccessToken(this.token?.toString() || "");
-     spotify.getMe().then(function(data) {
-      /* On affiche le pseudo du compte Spotify connect */ 
-      /*
-      document.getElementById("nom_user")!.innerHTML="Bienvenue sur Spotify :"
-      + data.display_name; })
-      .catch(function(err) {
-      console.log('Something went wrong:', err.message);
-      });
-      */
+    if(this.isConnected){
+      this.divSpotify = true;
+    }
+  }
+
+  divSpotifyShow (): void{
+    
   }
 
   loginSpotify (): void{
@@ -64,10 +62,15 @@ export class SpotifyComponent implements OnInit {
     window.location.replace(redirect);
     
     /* On est maintenant connecte a Spotify (on peut donc afficher la page Spotify au lieu de Youtube */
-    this.isConnected = true ;
+    this.isConnected = true;
+
+    
+
     console.log("Le token d'acces est : " + this.token);
 
   }
+
+
     // Search button has been clicked
     chercherSons (): void{
 
