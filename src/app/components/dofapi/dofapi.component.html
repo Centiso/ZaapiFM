@@ -12,6 +12,7 @@
     <!--Tableau avec affichage des statistiques de statsItem -->
         <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour prévenir
         l'utilisateur si la requête REST ne retourne pas de résultats -->
+    <div style="overflow-x:auto;">
     <table>
         <tr *ngFor="let stat of statsItem">
             <th> {{stat.nom}} </th>
@@ -34,6 +35,7 @@
             
         </tr>
     </table>
+    </div>
 
     <div>
         <!--Menu pour selectionner une statistique à ajouter dans statsItem -->
