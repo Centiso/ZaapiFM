@@ -1,4 +1,4 @@
-<div style="margin: auto;">
+<div style="margin: auto; margin-top: 12px;">
     <div>
         <!-- <input type="email" class="form-control" id="floatingInput" placeholder="Item"> -->
         <!-- Barre de recherche du nom de l'item -->
@@ -13,24 +13,32 @@
     <!--Tableau avec affichage des statistiques de statsItem -->
         <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour prévenir
         l'utilisateur si la requête REST ne retourne pas de résultats -->
-    <div style="overflow-x:auto;">
+    <div style="overflow-x:auto; margin-top: 12px;">
         <table>
+            <tr>
+                <th style="color: #C5D8A4;"> <h5>Caractéristique</h5></th>
+                <th><th style="color: #C5D8A4;"><h5>Début</h5></th><th>
+                <th><th><th>
+                <th><th style="color: #C5D8A4;"><h5>Fin</h5></th>
+            </tr>
             <tr *ngFor="let stat of statsItem">
-                <th style="color: #C5D8A4;"> {{stat.nom}} </th>
-                <th>
+                <th style="color: #C5D8A4;"> <h5>{{stat.nom}}</h5> </th>
                 <td *ngFor="let rune of stat.runes">
-                    <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span>
+                    <!-- <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span> -->
                     <input #boxRune (blur)="updateNombreRuneDeb(rune, boxRune.value)"
+                        id="floatingInput" placeholder="{{rune.nom}}"
                         type="text" class="form-control" aria-label="item" aria-describedby="addon-wrapping" maxlength="6" size="3">
                 </td>
             <!-- Solution "de fortune" pour séparer la partie Début de la partie Fin -->
                 <ng-container *ngFor="let osef of stat.pourLeCSS">
                     <th>
                 </ng-container>
+                <th><th><th>
 
                 <td *ngFor="let rune of stat.runes">
-                    <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span>
+                    <!-- <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span> -->
                     <input #boxRune (blur)="updateNombreRuneFin(rune, boxRune.value)"
+                        id="floatingInput" placeholder="{{rune.nom}}"
                         type="text" class="form-control" maxlength="6" size="3">
                 </td>
 
