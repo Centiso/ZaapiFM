@@ -53,10 +53,10 @@ body {
 
 .right-side {
     font-family: 'League Spartan', sans-serif;
-    margin-top: 2%;
     align-items: center;
     text-align: center;
     margin-right: 1%;
+    background-color: #C5D8A4;
 }
 
 .left-side {
