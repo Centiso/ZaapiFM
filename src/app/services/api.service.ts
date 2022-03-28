@@ -125,12 +125,17 @@ caractéristique de tCaracs[] et copie les statistiques correspondantes */
 export class Carac{
   nom: string;
   runes: Array<Rune>;
+  pourLeCSS: Array<Rune>;
 
   constructor(nom: string, dim: string, n: number){
     this.nom = nom;
     this.runes = new Array<Rune>();
-    for (let i = 0; i < n; i++) {
-      this.runes.push( new Rune(dim, i) );
+    for( let i = 0 ; i < n ; i++ ){
+      this.runes.push( new Rune(dim, i+1) );
+    }
+    this.pourLeCSS = new Array<Rune>();
+    for( let i = 0 ; i < 3-n ; i++ ){
+      this.pourLeCSS.push( new Rune(dim, 0))
     }
   }
 }
@@ -143,9 +148,9 @@ export class Rune{
 
   constructor(nom: string, n: number){
     switch(n){
-      case 0:  this.nom = nom; break;
-      case 1:  this.nom = "Pa " + nom; break;
-      case 2:  this.nom = "Ra " + nom; break;
+      case 1:  this.nom = nom; break;
+      case 2:  this.nom = "Pa " + nom; break;
+      case 3:  this.nom = "Ra " + nom; break;
       default: this.nom = "missingN0"; break;
     }
     this.nDebut = 0;

@@ -15,16 +15,23 @@
     <table>
         <tr *ngFor="let stat of statsItem">
             <th> {{stat.nom}} </th>
+            <th>
             <td *ngFor="let rune of stat.runes">
-                <p> {{rune.nom}} </p>
+                <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span>
                 <input #boxRune (blur)="updateNombreRuneDeb(rune, boxRune.value)"
-                    type="text" maxlength="6" size="3">
+                    type="text" class="form-control" aria-label="item" aria-describedby="addon-wrapping" maxlength="6" size="3">
             </td>
+        <!-- Solution "de fortune" pour séparer la partie Début de la partie Fin -->
+            <ng-container *ngFor="let osef of stat.pourLeCSS">
+                <th>
+            </ng-container>
+
             <td *ngFor="let rune of stat.runes">
-                <p> {{rune.nom}} </p>
+                <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span>
                 <input #boxRune (blur)="updateNombreRuneFin(rune, boxRune.value)"
-                    type="text" maxlength="6" size="3">
+                    type="text" class="form-control" maxlength="6" size="3">
             </td>
+            
         </tr>
     </table>
 
