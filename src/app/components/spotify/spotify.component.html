@@ -1,10 +1,15 @@
-<div class="spotify">
-    <button class="btn-default animation-on-hover" type = "button" (click)= "loginSpotify();">Connexion spotify</button>
+<div class = "spotify">
 
+    <img href="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1024px-Spotify_logo_without_text.svg.png" width="85" height="83" onclick="loginSpotify();" />
+    
+<button class="btn-default animation-on-hover" type = "button" (click)= "loginSpotify();">Connexion spotify</button>
+</div>
+<div *ngIf="divSpotify" >
 
+    
     <h3> Saisir artiste / titre : &nbsp; <input id="son" required> &nbsp; &nbsp; &nbsp;
     <button class="btn btn-outline-light" type="button" (click)="chercherSons();" style="background-color: #534340;"> Rechercher </button> </h3>
-    
+        
         <div class="container"> 
             <div class="row">
                 <div id="song_0" class="col"></div>
