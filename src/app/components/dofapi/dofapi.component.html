@@ -1,4 +1,4 @@
-<div>
+<div style="margin: auto;">
     <div>
         <!--Barre de recherche du nom de l'item-->
         <div class="input-group flex-nowrap">
@@ -13,40 +13,38 @@
         <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour prévenir
         l'utilisateur si la requête REST ne retourne pas de résultats -->
     <div style="overflow-x:auto;">
-    <table>
-        <tr *ngFor="let stat of statsItem">
-            <th> {{stat.nom}} </th>
-            <th>
-            <td *ngFor="let rune of stat.runes">
-                <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span>
-                <input #boxRune (blur)="updateNombreRuneDeb(rune, boxRune.value)"
-                    type="text" class="form-control" aria-label="item" aria-describedby="addon-wrapping" maxlength="6" size="3">
-            </td>
-        <!-- Solution "de fortune" pour séparer la partie Début de la partie Fin -->
-            <ng-container *ngFor="let osef of stat.pourLeCSS">
+        <table>
+            <tr *ngFor="let stat of statsItem">
+                <th style="color: #C5D8A4;"> {{stat.nom}} </th>
                 <th>
-            </ng-container>
+                <td *ngFor="let rune of stat.runes">
+                    <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span>
+                    <input #boxRune (blur)="updateNombreRuneDeb(rune, boxRune.value)"
+                        type="text" class="form-control" aria-label="item" aria-describedby="addon-wrapping" maxlength="6" size="3">
+                </td>
+            <!-- Solution "de fortune" pour séparer la partie Début de la partie Fin -->
+                <ng-container *ngFor="let osef of stat.pourLeCSS">
+                    <th>
+                </ng-container>
 
-            <td *ngFor="let rune of stat.runes">
-                <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span>
-                <input #boxRune (blur)="updateNombreRuneFin(rune, boxRune.value)"
-                    type="text" class="form-control" maxlength="6" size="3">
-            </td>
-            
-        </tr>
-    </table>
+                <td *ngFor="let rune of stat.runes">
+                    <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span>
+                    <input #boxRune (blur)="updateNombreRuneFin(rune, boxRune.value)"
+                        type="text" class="form-control" maxlength="6" size="3">
+                </td>
+                
+            </tr>
+        </table>
+
+        <div style="width: 700px;">
+            <!--Menu pour selectionner une statistique à ajouter dans statsItem -->
+            <select name="Ajouter un Exo">
+                <option *ngFor="let stat of tCaracs" (click)="ajouterExo(stat)">{{stat.nom}}</option>
+            </select>
+            <input (click)="supprimerExo()" type="button" id="addExo" value="Supprimer un Exo">
+
+            <!--Zone de texte représentant le prix final de FM -->
+            <p>Prix calculé : {{affichagePrix()}}</p>
+        </div>
     </div>
-
-    <div>
-        <!--Menu pour selectionner une statistique à ajouter dans statsItem -->
-        <select name="Ajouter un Exo">
-            <option *ngFor="let stat of tCaracs" (click)="ajouterExo(stat)">{{stat.nom}}</option>
-        </select>
-        <input (click)="supprimerExo()" type="button" id="addExo" value="Supprimer un Exo">
-
-        <!--Zone de texte représentant le prix final de FM -->
-        <p>Prix calculé : {{affichagePrix()}}</p>
-    </div>
-
-
 </div>
