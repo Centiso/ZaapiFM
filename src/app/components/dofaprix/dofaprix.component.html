@@ -1,12 +1,10 @@
-<div style="overflow-x:auto;">
-    <h5 style="color: #C5D8A4;">Prix des runes</h5>
+<div style="overflow-x:auto; margin-left: 5%; margin-right: 5%;">
     <table>
         <td *ngFor="let stat of statsItem">
-            <tr *ngFor="let rune of stat.runes">
+            <tr *ngFor="let rune of stat.runes" style="margin: 5%;">
                 <!-- <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span> -->
                 <input #boxRune (blur)="updatePrixRune(rune, boxRune.value)"
-                    id="floatingInput" placeholder="{{rune.nom}}" style="margin-top: 8px;"
-                    type="text" class="form-control" maxlength="6" size="3">
+                    id="floatingInput" placeholder="{{rune.nom}}" type="text" class="form-control" maxlength="6" size="3" alt="{{rune.nom}}">
             </tr>
             
         </td>
