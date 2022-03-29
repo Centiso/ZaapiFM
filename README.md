@@ -4,15 +4,15 @@
 
 L3 Informatique - Angular/Bootstrap Project.
 
-### Pré-requis
+## Pré-requis
 
 Avoir une connexion internet.
 
-### Conseils pour utilisation
+## Conseils pour utilisation
 
 Avoir une connaissance en forgemagie du jeu vidéo **Dofus**.
 
-### Installation
+## Installation
 
 Vous pouvez posez votre corps sur votre chaise et vous aventurer sur le site.
 
