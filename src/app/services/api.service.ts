@@ -35,6 +35,7 @@ export class ApiService {
     new Carac("Portée", "PO", 1),
     new Carac("PA", "Ga PA", 1),
     new Carac("PM", "Ga PM", 1),
+    new Carac("Initiative", "Ini", 3),
     new Carac("Dommages", "Do", 1),
     new Carac("Dommages Neutre", "Do Neutre", 2),
     new Carac("Dommages Terre", "Do Terre", 2),
