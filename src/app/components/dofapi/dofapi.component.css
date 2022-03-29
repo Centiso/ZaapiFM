@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 label {
     font-family: 'League Spartan', sans-serif;
@@ -37,4 +38,50 @@ tbody {
     font-family: 'League Spartan', sans-serif;
     align-items: center;
     align-content: center;
+=======
+
+label {
+    font-family: 'League Spartan', sans-serif;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    font-family: 'League Spartan', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    font-family: 'League Spartan', sans-serif;
+    background-color: #534340;
+    border-radius: 5px;
+    height: 500px;
+    width: 600px;
+    margin-top: 5%;
+    align-items: center;
+    margin: auto;
+}
+
+thead {
+    font-family: 'League Spartan', sans-serif;
+    text-align: center;
+}
+
+tbody {
+    font-family: 'League Spartan', sans-serif;
+    text-align: center;
+}
+
+.dofapi-component {
+    font-family: 'League Spartan', sans-serif;
+    align-items: center;
+    align-content: center;
+}
+
+.input-item {
+    align-items: center;
+    align-content: center;
+>>>>>>> Stashed changes
 }

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="input-group flex-nowrap" style =" margin-top : 5px ; margin-left : 15%; margin-right: 15%;">
     <span class="input-group-text" id="addon-wrapping">Item</span>
     <input #boxNom (keyup.enter)="rechercherItem(boxNom.value)"
@@ -59,3 +60,53 @@
         </div>
     </div>
 </div>
+=======
+<div>
+    <div>
+        <!--Barre de recherche du nom de l'item-->
+        <div class="input-group flex-nowrap input-item">
+            <span class="input-group-text" id="addon-wrapping">Item</span>
+            <input type="text" class="form-control" aria-label="Item" aria-describedby="addon-wrapping">
+        </div>
+
+        <!--Menu déroulant du prix des différentes runes-->
+        <!-- A AJOUTER DANS UN AUTRE COMPOSANT IDK
+        <ul *ngFor="let stat of statsItem">
+            <li>
+                <p> {{stat.nom}} </p>
+                <input type="text" id="ADEFINIR?" maxlength="8" size="6">
+            </li>
+        </ul>
+        -->
+    </div>
+
+    <!--Interface principale avec affichage de i containers-->
+        <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour ne pas afficher si le
+        résultat de la recherche d'item n'est pas assez précis / bon pour identifier
+        un item en particulier-->
+    <table>
+        <tr *ngFor="let stat of statsItem">
+            <th> {{stat.nom}} </th>
+            <td *ngFor="let rune of stat.runes">
+                <p> {{rune.nom}} </p>
+                <input type="text" id="ADEFINIR?" maxlength="6" size="2">
+            </td>
+            <td *ngFor="let rune of stat.runes">
+                <p> {{rune.nom}} </p>
+              <input type="text" id="ADEFINIR?" maxlength="6" size="2">
+            </td>
+            <!--Affichage alternatif possible avec des *ngIf quand la stat ne possède pas 3 runes-->
+        </tr>
+    </table>
+
+    <div>
+        <!--Bouton pour ajouter 1 container à i-->
+        <input type="button" id="addExo" name="Ajouter un Exo">
+
+        <!--Zone de texte représentant le prix final de FM-->
+        <p>Prix calculé : LMAO</p>
+    </div>
+</div>
+
+<!-- https://www.developpez.net/forums/d1984543/javascript/typescript/convertion-json-object-typescript-angular/ -->
+>>>>>>> Stashed changes
