@@ -60,24 +60,24 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col left-side">
-          <app-dofapi></app-dofapi>
+        <div class="col top-side">
+          
+            <app-dofapi></app-dofapi>
         </div>
         <div class="col right-side">
-          <div class="menu-deroulant" style="background-color: #534340; margin-top: 12px;">
+          <div class="menu-deroulant" style="background-color: #534340; margin-top: 55px;">
             <app-dofaprix></app-dofaprix>
           </div>
-          <div class="spotify">
+          
+          <div style="border: solid #534340; border-radius: 5px; margin-left: 15%; margin-top: 5px; margin-right: 15%;">
             <app-spotify></app-spotify>
-          </div>
-          <div  class="twitch">
-            <app-twitch></app-twitch>
-          </div>
-          <div style="border: solid #534340; border-radius: 5px; margin-left: 25%; margin-right: 25%;">
             <a href="https://www.twitch.tv/login?client_id=qp871hruk96hd4h5mh8yaeo5n96wby&redirect_params=client_id%3Dqp871hruk96hd4h5mh8yaeo5n96wby%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A4200%252F%26response_type%3Dtoken%26scopes%3Dchannel%253Aread%253Asubscriptions">
               <img href="" src="http://pngimg.com/uploads/twitch/twitch_PNG49.png" width="100" height="100"/>
+
             </a>
-               
+            <div  class="twitch">
+              <app-twitch></app-twitch>
+            </div>
             <!--<button class="btn-default animation-on-hover" type = "button" onclick= "loginSpotify();">Connexion spotify</button> -->
           </div>
         </div>
