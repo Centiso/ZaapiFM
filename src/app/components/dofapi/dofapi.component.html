@@ -1,31 +1,33 @@
-<div class="input-group flex-nowrap" style =" margin-top : 5px ; margin-left : 15%; margin-right: 15%;">
-    <span class="input-group-text" id="addon-wrapping">Item</span>
-    <input #boxNom (keyup.enter)="rechercherItem(boxNom.value)"
-        type="text" class="form-control" aria-label="Item" aria-describedby="addon-wrapping" style="margin-right: 300px;">
-</div>
+<div style="margin: auto;">
 
-<div style="margin: auto; margin-top: 12px;">
-    <div>
-        <!-- <input type="email" class="form-control" id="floatingInput" placeholder="Item"> -->
-        <!-- Barre de recherche du nom de l'item -->
-        
-
-    </div>
 
     <!--Tableau avec affichage des statistiques de statsItem -->
         <!--NOTE : Possibilité d'encapsuler dans un *ngIf pour prévenir
         l'utilisateur si la requête REST ne retourne pas de résultats -->
-    <div style="overflow-x:auto; margin-top: 12px;">
-        <table>
+    <div>
+
+        <div style="background-color: #534340; margin-left: 20%; margin-right: 20%; align-items: center; margin-top: 67px;">
+            <h5 style="color: #C5D8A4; margin-top: 5%; text-align: center;">Quantité de runes (à remplir)</h5>
+        </div>
+
+        <div class="input-group flex-nowrap" style ="margin-left: 5%; margin-top: 5%; width: 90%;">
+            <span class="input-group-text" id="addon-wrapping">Item</span>
+            <input #boxNom (keyup.enter)="rechercherItem(boxNom.value)"
+                type="text" class="form-control container" aria-label="Item" aria-describedby="addon-wrapping">
+        </div>
+
+       
+
+        <table style=" margin: auto; margin-top: 2%; width: 80%; height: 700px; border-top-left-radius: 3px; border-top-right-radius: 3px;">
             <tr>
-                <th style="color: #C5D8A4;"> <h5>Caractéristique</h5></th>
-                <th><th style="color: #C5D8A4;"><h5>Début</h5></th><th>
+                <th style="color: #C5D8A4; width: 200px;"> <h5 style="text-align: center;"><strong>Caractéristique</strong></h5></th>
+                <th style="background-color: rgb(105, 85, 69);"><th style="color: #C5D8A4; background-color: rgb(105, 85, 69);"><h5 style="margin-left: 20%;"><strong>Début</strong></h5></th><th style="background-color: rgb(105, 85, 69);">
                 <th><th><th>
-                <th><th style="color: #C5D8A4;"><h5>Fin</h5></th>
+                <th><th><h5 style="color: #C5D8A4; margin-left: 20%"><strong>Fin</strong></h5></th><th></th>
             </tr>
             <tr *ngFor="let stat of statsItem">
-                <th style="color: #C5D8A4;"> <h5>{{stat.nom}}</h5> </th>
-                <td *ngFor="let rune of stat.runes">
+                <th style="color: #C5D8A4;"> <h5 style="text-align: center;">{{stat.nom}}</h5> </th>
+                <td *ngFor="let rune of stat.runes" style="background-color: rgb(105, 85, 69);">
                     <!-- <span class="input-group-text" id="addon-wrapping">{{rune.nom}}</span> -->
                     <input #boxRune (blur)="updateNombreRuneDeb(rune, boxRune.value)"
                         id="floatingInput" placeholder="{{rune.nom}}"
@@ -33,7 +35,7 @@
                 </td>
             <!-- Solution "de fortune" pour séparer la partie Début de la partie Fin -->
                 <ng-container *ngFor="let osef of stat.pourLeCSS">
-                    <th>
+                    <th style="background-color: rgb(105, 85, 69);">
                 </ng-container>
                 <th><th><th>
 
@@ -45,17 +47,22 @@
                 </td>
 
             </tr>
+
+           
         </table>
 
-        <div style="width: 700px; margin: auto;">
+        <div style="width: 80%; height: 150px; margin: auto; background-color: #534340; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;">
             <!--Menu pour selectionner une statistique à ajouter dans statsItem -->
-            <select name="Ajouter un Exo">
+            <select name="Ajouter un Exo" style="margin-left: 10%; width: 50%; margin-top: 10px;">
                 <option *ngFor="let stat of tCaracs" (click)="ajouterExo(stat)">{{stat.nom}}</option>
             </select>
-            <input (click)="supprimerExo()" type="button" id="addExo" value="Supprimer un Exo">
+                
+            <input (click)="supprimerExo()" type="button" id="addExo" value="Supprimer un Exo" style="background-color: #534340;">
 
             <!--Zone de texte représentant le prix final de FM -->
-            <h3 style="color:#534340">Prix calculé : {{affichagePrix()}}</h3>
+            <h3 style="color:white">Prix calculé : {{affichagePrix()}}</h3>
         </div>
+
+        
     </div>
 </div>
