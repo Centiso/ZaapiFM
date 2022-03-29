@@ -32,4 +32,4 @@ Il vous suffit d'aller sur le site ``localhost:4200``
 * **Arthur SCHERRER** _alias_ [@goujon2708](https://github.com/goujon2708)
 * **Abel COUTOLLEAU** _alias_ [@Killourmeu](https://github.com/Killourmeu)
 
-Lisez la liste des [contributeurs](https://github.com/Centiso/ZaapiFM/contributors) pour voir qui à aidé au projet !
+Lisez la liste des [contributeurs](https://github.com/Centiso/ZaapiFM/contributors) pour voir qui a aidé au projet !
