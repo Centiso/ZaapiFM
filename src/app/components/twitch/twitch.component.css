@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan&display=swap');
 
-<<<<<<< Updated upstream
-h3 {
-=======
 h2 {
     margin-left: 7%;
->>>>>>> Stashed changes
     color: white;;
 }
 
@@ -60,15 +56,11 @@ td {
 }
 
 .card {
-<<<<<<< Updated upstream
     background: linear-gradient( #534340 , #9b7f5b);
 }
 
 .card-text {
     font-size: 1;
-=======
-    background: linear-gradient(#bd948c, #C5D8A4);
->>>>>>> Stashed changes
 }
 
 img {

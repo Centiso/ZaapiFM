@@ -65,28 +65,17 @@ body {
     height: 800px;
     align-items: center;
     text-align: center;
-<<<<<<< Updated upstream
     margin: auto;
     background-color: #C5D8A4;
-=======
->>>>>>> Stashed changes
 }
 
 .spotify {
     font-family: 'League Spartan', sans-serif;
-<<<<<<< Updated upstream
-=======
-    /* background-color: red; */
->>>>>>> Stashed changes
 }
 
 .twitch {
     font-family: 'League Spartan', sans-serif;
-<<<<<<< Updated upstream
     align-items: center;
-=======
-    background-color: darkgreen;
->>>>>>> Stashed changes
     margin: auto;
 }
 
