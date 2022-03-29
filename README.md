@@ -1,27 +1,35 @@
-# Dashfront
+# ZaapiFM
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
+[![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](http://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/not-a-bug-a-feature.svg)](http://forthebadge.com)  
 
-## Development server
+L3 Informatique - Angular/Bootstrap Project.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Pré-requis
 
-## Code scaffolding
+Avoir une connexion internet.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Conseils pour utilisation
 
-## Build
+Avoir une connaissance en forgemagie du jeu vidéo **Dofus**.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+Vous pouvez posez votre corps sur votre chaise et vous aventurer sur le site.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Démarrage
 
-## Running end-to-end tests
+Il vous suffit d'aller sur le site ``localhost:4200``
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Fabriqué avec
 
-## Further help
+* [Visual Studio Code](https://code.visualstudio.com/) - Éditeur de texte
+* [Atom](https://atom.io/) - Éditeur de texte
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Auteurs
+
+* **Florian SANNA** _alias_ [@Centiso](https://github.com/Centiso)
+* **Nicolas TACHET** _alias_ [@Lynwa](https://github.com/Lynwa)
+* **Arthur SCHERRER** _alias_ [@goujon2708](https://github.com/goujon2708)
+* **Abel COUTOLLEAU** _alias_ [@Killourmeu](https://github.com/Killourmeu)
+
+Lisez la liste des [contributeurs](https://github.com/Centiso/ZaapiFM/contributors) pour voir qui a aidé au projet !

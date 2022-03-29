@@ -15,16 +15,14 @@ export class SpotifyComponent implements OnInit {
   token: string | undefined;
   sParam: string | undefined;
   raw_search_query: string | undefined;
-  divSpotify :boolean = false;
+  divSpotify :boolean = true;
   
   constructor() { }
 
 
   
   ngOnInit(): void {
-    if(this.isConnected){
-      this.divSpotify = true;
-    }
+    
   }
 
   divSpotifyShow (): void{
@@ -60,17 +58,20 @@ export class SpotifyComponent implements OnInit {
     const redirect = 'https://accounts.spotify.com/authorize?client_id=773daa976a4242229535987d2ab5483a&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%3A4200%2F';
    
     window.location.replace(redirect);
-    
+
     /* On est maintenant connecte a Spotify (on peut donc afficher la page Spotify au lieu de Youtube */
     this.isConnected = true;
-
-    
+   
+    this.divSpotify = true;
 
     console.log("Le token d'acces est : " + this.token);
 
   }
 
 
+    divShow() : void{
+      this.divSpotify = true;
+    }
     // Search button has been clicked
     chercherSons (): void{
 
