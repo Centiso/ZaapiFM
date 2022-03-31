@@ -17,11 +17,16 @@ export class AppViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  showTwitchDiv(e: Event): void {
+    console.log("show is running :)")
+    var element = document.getElementById('twitchIsDisplayed')
+    element?.addEventListener('click', this.handClick);
+  }
 
-
-  divSpotifyFunction() {
-    this.divSpotify = true;
+  handClick(e: Event) {
+    console.log("clicked !");
+    var element = document.getElementById('twitchIsDisplayed')
+    // element?.removeEventListener('click', handClick);
   }
 }
 
