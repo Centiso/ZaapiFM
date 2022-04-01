@@ -16,7 +16,7 @@
 
        
 
-        <table style=" margin: auto; margin-top: 2%; width: 80%; height: 700px; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+        <table style="margin-top: 2%; margin-bottom: 5%; width: 80%; height: 700px; border-top-left-radius: 3px; border-top-right-radius: 3px;">
             <tr>
                 <th style="color: #C5D8A4; width: 200px;"> <h5 style="text-align: center;"><strong>Caractéristique</strong></h5></th>
                 <th style="background-color: rgb(105, 85, 69);"><th style="color: #C5D8A4; background-color: rgb(105, 85, 69);"><h5 style="margin-left: 20%;"><strong>Début</strong></h5></th><th style="background-color: rgb(105, 85, 69);">
@@ -51,14 +51,14 @@
 
         <div style="width: 80%; height: 150px; margin: auto; background-color: #534340; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;">
             <!--Menu pour selectionner une statistique à ajouter dans statsItem -->
-            <select name="Ajouter un Exo" style="margin-left: 10%; width: 50%; margin-top: 10px;">
+            <select class="form-select" name="Ajouter un Exo" style="margin-left: 10%; width: 30%;">
                 <option *ngFor="let stat of tCaracs" (click)="ajouterExo(stat)">{{stat.nom}}</option>
             </select>
                 
-            <input (click)="supprimerExo()" type="button" id="addExo" value="Supprimer un Exo" style="background-color: #534340;">
+            <input class="btn" (click)="supprimerExo()" type="button" id="addExo" value="Supprimer un Exo" style="margin-left: 10%; margin-top: 5%; background-color: #C5D8A4; color:#534340">
 
             <!--Zone de texte représentant le prix final de FM -->
-            <h3 style="color:white">Prix calculé : {{affichagePrix()}}</h3>
+            <h3 style="color: #534340; text-align: center; margin-top: 5%; margin-left: 15%; margin-right: 15%; background-color: #C5D8A4; border-radius: 3px;">Prix calculé : {{affichagePrix()}}</h3>
         </div>
 
         
