@@ -111,4 +111,31 @@ export class TwitchApiService {
             xhr.send();
         });
     }
+
+    /*
+        - mettre un id sur un bouton
+        - récupérer l'id dans le .ts
+        - faire un addEventListener
+            - afficher le div s'il est caché avec div.style.display = block;
+            - cacher le div s'il est visible avec div.style.display = none;
+    */
+
+    showTwitchDiv(): void {
+        var e = document.getElementById('twitchIsDisplayed')
+        e?.addEventListener('click', this.handClick)
+    }
+
+    handClick(this: HTMLElement, e: Event): void {
+        console.log("clicked !")
+        e.preventDefault()
+        this.style.backgroundColor = 'black';
+    }
+
+    newHand(this: HTMLElement, e: Event): void {
+        console.log("RemoveEventListener !")
+        // removeEventListener('click', )
+    }
+
 }
+
+

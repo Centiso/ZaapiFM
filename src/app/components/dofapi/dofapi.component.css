@@ -16,12 +16,11 @@ input {
 table {
     font-family: 'League Spartan', sans-serif;
     background-color: #534340;
-    border-radius: 5px;
     height: 500px;
     width: 700px;
     margin-top: 5%;
-    margin: auto;
     align-items: center;
+    margin-left: 7%;
 }
 
 thead {
