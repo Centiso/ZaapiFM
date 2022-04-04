@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ApiService } from './../../services/api.service';
 
 @Component({
   selector: 'app-app-view',
@@ -12,7 +12,7 @@ export class AppViewComponent implements OnInit {
   divTwitch :boolean = false;
   divSpotify :boolean = false;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +27,10 @@ export class AppViewComponent implements OnInit {
     console.log("clicked !");
     var element = document.getElementById('twitchIsDisplayed')
     // element?.removeEventListener('click', handClick);
+  }
+
+  rechercherItem(nom: string): void {
+    this.apiService.getItemRecherche(nom);
   }
 }
 

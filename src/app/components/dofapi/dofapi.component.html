@@ -4,6 +4,7 @@
         l'utilisateur si la requête REST ne retourne pas de résultats -->
     <div>
 
+    <!--
         <div style="background-color: #534340; margin-left: 20%; margin-right: 20%; align-items: center; margin-top: 67px;">
             <h5 style="color: #C5D8A4; margin-top: 5%; text-align: center;">Quantité de runes (à remplir)</h5>
         </div>
@@ -13,10 +14,11 @@
             <input #boxNom (keyup.enter)="rechercherItem(boxNom.value)"
                 type="text" class="form-control container" aria-label="Item" aria-describedby="addon-wrapping">
         </div>
+    -->
 
        
 
-        <table style="margin-top: 2%; margin-bottom: 5%; width: 80%; height: 700px; border-top-left-radius: 3px; border-top-right-radius: 3px;">
+        <table style="margin-top: 2%; width: 80%; height: 700px; border-top-left-radius: 3px; border-top-right-radius: 3px;">
             <tr>
                 <th style="color: #C5D8A4; width: 200px;"> <h5 style="text-align: center;"><strong>Caractéristique</strong></h5></th>
                 <th style="background-color: rgb(105, 85, 69);"><th style="color: #C5D8A4; background-color: rgb(105, 85, 69);"><h5 style="margin-left: 20%;"><strong>Début</strong></h5></th><th style="background-color: rgb(105, 85, 69);">
@@ -49,7 +51,7 @@
            
         </table>
 
-        <div style="width: 80%; height: 150px; margin: auto; background-color: #534340; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;">
+        <div style="width: 80%; height: 150px; margin: auto; background-color: #534340; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; padding-top: 12px;">
             <!--Menu pour selectionner une statistique à ajouter dans statsItem -->
             <select class="form-select" name="Ajouter un Exo" style="margin-left: 10%; width: 30%;">
                 <option *ngFor="let stat of tCaracs" (click)="ajouterExo(stat)">{{stat.nom}}</option>

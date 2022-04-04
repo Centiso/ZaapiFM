@@ -60,8 +60,16 @@
   <body>
     <div class="container-fluid">
       <div class="row">
+        <div class="input-group flex-nowrap" style ="margin-left: 5%; margin-top: 5%; width: 90%;">
+          <span class="input-group-text" id="addon-wrapping">Item</span>
+          <input #boxNom (keyup.enter)="rechercherItem(boxNom.value)"
+              type="text" class="form-control container" aria-label="Item" aria-describedby="addon-wrapping">
+        </div>
         <div class="col top-side">
-            <app-dofapi></app-dofapi>
+          <div style="background-color: #534340; margin-left: 20%; margin-right: 20%; align-items: center; margin-top: 67px;">
+            <h5 style="color: #C5D8A4; margin-top: 5%; text-align: center;">Quantité de runes (à remplir)</h5>
+          </div>
+          <app-dofapi></app-dofapi>
         </div>
         <div class="col right-side">
           <div style="background-color: #534340; margin-left: 20%; margin-right: 20%; margin-top: 67px; border-radius: 3px;">
