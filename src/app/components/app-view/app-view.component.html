@@ -15,15 +15,9 @@
     </button>
   
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="auth" style="color: #C5D8A4; margin-left: 2%;">Authentification</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="" style="color: #C5D8A4; margin-left: 2%;">App</a>
-        </li>
+      <ul class="navbar-nav"> 
         <li class="nav-item" style="margin-left:1%;">
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #C5D8A4;">
+          <button type="btn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #C5D8A4; color:#534340; box-shadow: 2px 1px 5px #C5D8A4;">
             Tutoriel
           </button>
   
@@ -33,15 +27,15 @@
               <div class="modal-content" style="background-color: #534340;">
                 <div class="modal-header">
                   <h5 class="modal-title" id="staticBackdropLabel" style="color: #C5D8A4;">Tutoriel - Utilisation de l'application</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="color: white;">
                   Bienvenue jeune âme ! ZaapiFM est une interface qui se veut une aide pour les forgemages aguerris du monde des Douze. Cet outil vous permettra à long terme, de contrôler précisément vos dépenses en forgemagie, afin à terme de mieux vendre vos items, et de vous permettre d'identifier les objets à meilleure marge pour STONKS sur DOFUS !
 	                Vous trouverez une barre de recherche pour y mettre le nom de l'objet que vous souhaitez forgemager InGame. Les statistiques de l'objets seront automatiquement importées et l'interface créée. Vous pourrez saisir dans la colonne "début" le nombre de runes que vous possédez au début de la forgemagie, puis effectuer autant de forgemagie que vous le souhaitez sur votre objet InGame. Une fois que le résultat vous satisfait, rentrez le nombre de runes qu'il vous reste en fin de forgemagie, puis orientez vous vers votre Hotel de Vente des runes pour remplir les champs de prix des runes.
-	                Le calcul s'effectuera automatiquement et le prix final est le coût total de votre forgemagie. Merci d'avoir utilisé ZaapiFM, et en esperant que ce site devienne votre principal atout commercial sur vos concurrents ! (fuck Licori)
+	                Le calcul s'effectuera automatiquement et le prix final est le coût total de votre forgemagie. Merci d'avoir utilisé ZaapiFM, et en esperant que ce site devienne votre principal atout commercial sur vos concurrents ! (f*ck Licori)
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #C5D8A4;">Compris !</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #C5D8A4; color:#534340; box-shadow: 2px 1px 5px #C5D8A4;">Compris !</button>
                 </div>
               </div>
             </div>
@@ -60,22 +54,24 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="input-group flex-nowrap" style ="margin-left: 5%; margin-top: 5%; width: 90%;">
+        <div class="input-group flex-nowrap" style ="margin-left: 5%; margin-top: 2%; width: 90%;">
           <span class="input-group-text" id="addon-wrapping">Item</span>
           <input #boxNom (keyup.enter)="rechercherItem(boxNom.value)"
               type="text" class="form-control container" aria-label="Item" aria-describedby="addon-wrapping">
         </div>
+
         <div class="col top-side">
-          <div style="background-color: #534340; margin-left: 20%; margin-right: 20%; align-items: center; margin-top: 67px;">
+          <div style="background-color: #534340; margin-left: 20%; margin-right: 20%; align-items: center; margin-top: 67px; box-shadow: 10px 5px 5px #534340;">
             <h5 style="color: #C5D8A4; margin-top: 5%; text-align: center;">Quantité de runes (à remplir)</h5>
           </div>
           <app-dofapi></app-dofapi>
         </div>
+        
         <div class="col right-side">
-          <div style="background-color: #534340; margin-left: 20%; margin-right: 20%; margin-top: 67px; border-radius: 3px;">
+          <div style="background-color: #534340; margin-left: 20%; margin-right: 20%; margin-top: 67px; border-radius: 3px; box-shadow: 10px 5px 5px #534340;">
             <h5 style="color: #C5D8A4; margin-top: 5%;">Prix des runes (à remplir)</h5>
           </div>
-          <div class="menu-deroulant" style="background-color: #534340; margin-top: 20px;">
+          <div class="menu-deroulant" style="background-color: #534340; margin-top: 25px; box-shadow: 10px 5px 5px #534340;">
             <app-dofaprix style="margin-left: auto; margin-right: auto;"></app-dofaprix>
           </div>
           
@@ -132,7 +128,7 @@
             <!--Grid column-->
             <div class="col-auto">
               <!-- Submit button -->
-              <button type="submit" class="btn btn-outline-light mb-4" style="background-color: #534340;">
+              <button type="submit" class="btn mb-4" style="background-color: #534340; color: #C5D8A4; box-shadow: 3px 1px 5px #534340;">
                 Souscrire
               </button>
             </div>
