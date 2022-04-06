@@ -33,8 +33,6 @@ td {
 }
 
 .scrolling-wrapper{
-    margin-left: 10%;
-    margin-right: 10%;
     overflow-x: auto;
     width: 500px;
 }
@@ -56,7 +54,8 @@ td {
 }
 
 .card {
-    background: linear-gradient( #534340 , #9b7f5b);
+    /* background: linear-gradient( #534340 , #9b7f5b); */
+    background-color: #C5D8A4;
 }
 
 .card-text {

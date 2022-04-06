@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav"> 
         <li class="nav-item" style="margin-left:1%;">
-          <button type="btn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #C5D8A4; color:#534340; box-shadow: 2px 1px 5px #C5D8A4;">
+          <button type="btn" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #C5D8A4; color:#534340; box-shadow: 2px 1px 5px #C5D8A4;">
             Tutoriel
           </button>
   
@@ -75,10 +75,10 @@
             <app-dofaprix style="margin-left: auto; margin-right: auto;"></app-dofaprix>
           </div>
           
-          <div style="border: solid #534340; border-radius: 5px; margin-top: 5px;">
-            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-              <mat-button-toggle (click)="toggleButtonClick(1)" value="Spotify">Spotify</mat-button-toggle>
-              <mat-button-toggle (click)="toggleButtonClick(0)" value="Twitch">Twitch</mat-button-toggle>
+          <div style="background-color: #534340; border-radius: 5px; margin-top: 3%; box-shadow: 10px 5px 5px #534340;">
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style" style=" width: 100%; margin: auto;">
+              <mat-button-toggle (click)="toggleButtonClick(1)" value="Spotify" style="border-radius: 3px; margin-top: 10px; margin-bottom: 10px; margin-right: auto; margin-left: auto; background-color: #C5D8A4; color: #534340; box-shadow: 2px 1px 5px #C5D8A4;">Utiliser Spotify</mat-button-toggle>
+              <mat-button-toggle (click)="toggleButtonClick(0)" value="Twitch" style="border-radius: 3px; margin-top: 10px; margin-bottom: 10px;; margin-left: auto; margin-right: auto; background-color: #C5D8A4; color: #534340; box-shadow: 2px 1px 5px #C5D8A4;">Utiliser Twitch</mat-button-toggle>
             </mat-button-toggle-group>
 
             <ng-container *ngIf="divSpotify">
@@ -86,13 +86,17 @@
             </ng-container>
 
             <ng-container *ngIf="divTwitch">
-            <a href="https://www.twitch.tv/login?client_id=qp871hruk96hd4h5mh8yaeo5n96wby&redirect_params=client_id%3Dqp871hruk96hd4h5mh8yaeo5n96wby%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A4200%252F%26response_type%3Dtoken%26scopes%3Dchannel%253Aread%253Asubscriptions">
-              <img href="" src="http://pngimg.com/uploads/twitch/twitch_PNG49.png" width="100" height="100"/>
-            </a>
-            <button id="twitchIsDisplayed" >Show</button>
-            <div class="twitch" id="twitchDiv">
-              <app-twitch></app-twitch>
-            </div>
+              <h2 style="color: #C5D8A4; margin-top: 10px;">
+                <img class="twitch" src="https://brand.twitch.tv/assets/images/black.png" alt="" width="28" height="30">
+                Pour voir du contenu en direct...
+              </h2>
+              <button (click)="twitchAuthentification()" class="btn" style="background-color: #C5D8A4; color: #534340; box-shadow: 2px 1px 5px #C5D8A4;">
+                <a href="https://www.twitch.tv/login?client_id=qp871hruk96hd4h5mh8yaeo5n96wby&redirect_params=client_id%3Dqp871hruk96hd4h5mh8yaeo5n96wby%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A4200%252F%26response_type%3Dtoken%26scopes%3Dchannel%253Aread%253Asubscriptions"></a>
+                Connexion Twitch
+              </button>
+              <div class="twitch">
+                <app-twitch></app-twitch>
+              </div>
             </ng-container>
             <!--<button class="btn-default animation-on-hover" type = "button" onclick= "loginSpotify();">Connexion spotify</button> -->
           </div>

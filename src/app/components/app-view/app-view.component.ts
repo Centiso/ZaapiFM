@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TwitchApiService } from './../../services/twitch.api.service';
 import { ApiService } from './../../services/api.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class AppViewComponent implements OnInit {
 
   
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private twitchService: TwitchApiService) { }
 
   ngOnInit(): void {
   }
@@ -32,16 +33,8 @@ export class AppViewComponent implements OnInit {
     }
   }
 
-  showTwitchDiv(e: Event): void {
-    console.log("show is running :)")
-    var element = document.getElementById('twitchIsDisplayed')
-    element?.addEventListener('click', this.handClick);
-  }
-
-  handClick(e: Event) {
-    console.log("clicked !");
-    var element = document.getElementById('twitchIsDisplayed')
-    // element?.removeEventListener('click', handClick);
+  twitchAuthentification(): void {
+    this.twitchService.twitchAuth();
   }
 
   rechercherItem(nom: string): void {
