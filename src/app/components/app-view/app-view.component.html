@@ -76,7 +76,16 @@
           </div>
           
           <div style="border: solid #534340; border-radius: 5px; margin-top: 5px;">
-            <app-spotify></app-spotify>
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle (click)="toggleButtonClick(1)" value="Spotify">Spotify</mat-button-toggle>
+              <mat-button-toggle (click)="toggleButtonClick(0)" value="Twitch">Twitch</mat-button-toggle>
+            </mat-button-toggle-group>
+
+            <ng-container *ngIf="divSpotify">
+              <app-spotify></app-spotify>
+            </ng-container>
+
+            <ng-container *ngIf="divTwitch">
             <a href="https://www.twitch.tv/login?client_id=qp871hruk96hd4h5mh8yaeo5n96wby&redirect_params=client_id%3Dqp871hruk96hd4h5mh8yaeo5n96wby%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A4200%252F%26response_type%3Dtoken%26scopes%3Dchannel%253Aread%253Asubscriptions">
               <img href="" src="http://pngimg.com/uploads/twitch/twitch_PNG49.png" width="100" height="100"/>
             </a>
@@ -84,6 +93,7 @@
             <div class="twitch" id="twitchDiv">
               <app-twitch></app-twitch>
             </div>
+            </ng-container>
             <!--<button class="btn-default animation-on-hover" type = "button" onclick= "loginSpotify();">Connexion spotify</button> -->
           </div>
         </div>

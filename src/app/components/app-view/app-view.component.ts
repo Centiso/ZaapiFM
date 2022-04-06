@@ -12,9 +12,24 @@ export class AppViewComponent implements OnInit {
   divTwitch :boolean = false;
   divSpotify :boolean = false;
 
+
+  
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+  }
+
+  toggleButtonClick(n: number){
+    if(n){ // Spotify
+      console.log("Spotify");
+      this.divSpotify = true;
+      this.divTwitch = false;
+    }else{ // twitch
+      console.log("Twitch");
+      this.divSpotify = false;
+      this.divTwitch = true;
+    }
   }
 
   showTwitchDiv(e: Event): void {

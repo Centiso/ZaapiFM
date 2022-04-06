@@ -17,6 +17,8 @@ import { AuthComponent } from './components/auth/auth.component';
 import { AppViewComponent } from './components/app-view/app-view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+
 
 const appRoutes: Routes = [
   {path: 'dofapi', component: DofapiComponent},
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    MatButtonToggleModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
